@@ -103,38 +103,38 @@ Blockly.Python['delay'] = function(block) {
   return code;
 };
 
-Blockly.JavaScript['pixel_color'] = function(block) {
+Blockly.Python['pixel_color'] = function(block) {
   var dropdown_pixel = block.getFieldValue('pixel');
   var colour_color = block.getFieldValue('color');
   var number_brightness = block.getFieldValue('brightness');
-  // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  // TODO: Assemble Python into code variable.
+  var code = '...\n';
   return code;
 };
 
-Blockly.JavaScript['pixels_off'] = function(block) {
+Blockly.Python['pixels_off'] = function(block) {
   var dropdown_pixel = block.getFieldValue('pixel');
-  // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  // TODO: Assemble Python into code variable.
+  var code = '...\n';
   return code;
 };
 
-Blockly.JavaScript['sound_tone'] = function(block) {
+Blockly.Python['sound_tone'] = function(block) {
   var number_tone = block.getFieldValue('tone');
-  // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  // TODO: Assemble Python into code variable.
+  var code = '...\n';
   return code;
 };
 
-Blockly.JavaScript['sound_stop'] = function(block) {
-  // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+Blockly.Python['sound_stop'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  var code = '...\n';
   return code;
 };
 
-Blockly.JavaScript['sound_note'] = function(block) {
+Blockly.Python['sound_note'] = function(block) {
   var dropdown_note = block.getFieldValue('note');
-  // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  // TODO: Assemble Python into code variable.
+  var code = '...\n';
   return code;
 };
