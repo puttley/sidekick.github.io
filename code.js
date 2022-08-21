@@ -462,7 +462,7 @@ Code.init = function() {
   var toolboxXml = Blockly.Xml.textToDom(toolboxText);
 
   Code.workspace = Blockly.inject('content_blocks',
-      {media: 'media/',
+      {media: '.media/',
        rtl: rtl,
        toolbox: toolboxXml,
        zoom:
