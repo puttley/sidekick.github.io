@@ -34,6 +34,19 @@ Blockly.Blocks['move_start'] = {
   }
 };
 
+Blockly.Blocks['move_stop'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("stop moving");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#7B1FA2");
+ this.setTooltip("Stop robot movement.");
+ this.setHelpUrl("");
+  }
+};
+
 Blockly.Blocks['move_speed'] = {
   init: function() {
     this.appendDummyInput()
@@ -88,22 +101,44 @@ Blockly.Blocks['move_pivot'] = {
 Blockly.Blocks['move_steering'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("start moving with steering  ");
+        .appendField("start moving")
+        .appendField(new Blockly.FieldDropdown([["forward","forward"], ["reverse","reverse"]]), "direction");
     this.appendDummyInput()
         .appendField("left speed")
-        .appendField(new Blockly.FieldNumber(0, 0, Infinity, 100), "left speed");
+        .appendField(new Blockly.FieldNumber(0, 0, 100), "left speed");
     this.appendDummyInput()
         .appendField("%");
     this.appendDummyInput()
         .appendField("right speed")
-        .appendField(new Blockly.FieldNumber(0), "right speed");
+        .appendField(new Blockly.FieldNumber(0, 0, 100), "right speed");
     this.appendDummyInput()
         .appendField("%");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour("#7B1FA2");
- this.setTooltip("Start moving forward with a steering ratio. The robot will drive forward in an arc by setting a speed ratio for the left and right motors. The arc will be sharper with larger ratios. Speed range for each motor is 0 - 100.");
+ this.setTooltip("Start moving forward with a steering ratio. The robot will drive in an arc by setting a speed ratio for the left and right motors. The arc will be sharper with larger ratios. Speed range for each motor is 0 - 100.");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['move_servo'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("move");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([["servo 1","servo_1"], ["servo 2","servo_2"], ["both servos","servo_1_2"]]), "motor");
+    this.appendDummyInput()
+        .appendField("to")
+        .appendField(new Blockly.FieldNumber(0, 0, 180), "position")
+        .appendField("degrees at")
+        .appendField(new Blockly.FieldNumber(0, 0, 100), "speed")
+        .appendField("speed");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#db2457");
+ this.setTooltip("Move servo motors to a position at a speed. Position is 0-180, speed is 0 - 100%.");
  this.setHelpUrl("");
   }
 };
@@ -125,8 +160,8 @@ Blockly.Blocks['event_green_button'] = {
         .appendField("green button is")
         .appendField(new Blockly.FieldDropdown([["pressed","pressed"], ["not pressed","released"]]), "state");
     this.setOutput(true, "Boolean");
-    this.setColour("#ec5b13");
- this.setTooltip("Read the state of the green button. True is pressed, False is not pressed.");
+    this.setColour("#eea011");
+ this.setTooltip("Read the state of the green button. Returns true if condition is met.");
  this.setHelpUrl("");
   }
 };
@@ -137,8 +172,8 @@ Blockly.Blocks['event_gray_button'] = {
         .appendField("black button is")
         .appendField(new Blockly.FieldDropdown([["pressed","pressed"], ["not pressed","released"]]), "state");
     this.setOutput(true, "Boolean");
-    this.setColour("#ec5b13");
- this.setTooltip("Read the state of the black button. True is pressed, False is not pressed.");
+    this.setColour("#eea011");
+ this.setTooltip("Read the state of the black button. Returns true if condition is met.");
  this.setHelpUrl("");
   }
 };
@@ -168,7 +203,7 @@ Blockly.Blocks['sensor_line'] = {
 Blockly.Blocks['delay'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("pause for");
+        .appendField("wait for");
     this.appendDummyInput()
         .appendField(new Blockly.FieldNumber(0, 0, Infinity, 0.01), "NAME");
     this.appendDummyInput()
@@ -178,6 +213,82 @@ Blockly.Blocks['delay'] = {
     this.setNextStatement(true, null);
     this.setColour("#eea011");
  this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['pixel_color'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("set")
+        .appendField(new Blockly.FieldDropdown([["pixel 1","pixel_1"], ["pixel 2","pixel_2"], ["pixel 3","pixel_3"], ["pixel 4","pixel_4"], ["all pixels","pixel_all"]]), "pixel")
+        .appendField("to")
+        .appendField(new Blockly.FieldColour("#ff0000"), "color")
+        .appendField("at")
+        .appendField(new Blockly.FieldNumber(0, 0, 100), "brightness")
+        .appendField("% brightness");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#1ecbe1");
+ this.setTooltip("Set the pixel to a color and set the brightness.");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['pixels_off'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("turn")
+        .appendField(new Blockly.FieldDropdown([["pixel 1","pixel_1"], ["pixel 2","pixel_2"], ["pixel 3","pixel_3"], ["pixel 4","pixel_4"], ["all pixels","pixel_all"]]), "pixel")
+        .appendField("off");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#1ecbe1");
+ this.setTooltip("Turn off selected pixel(s).");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['sound_stop'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("stop all sounds");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#1b84e4");
+ this.setTooltip("Turn off sounds.");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['sound_note'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("play musical note")
+        .appendField(new Blockly.FieldDropdown([["A","A"], ["B","B"], ["C","C"], ["D","D"], ["E","E"], ["F","F"], ["G","G"]]), "note");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#1b84e4");
+ this.setTooltip("Play a musical note.");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['sound_tone'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("play tone at")
+        .appendField(new Blockly.FieldNumber(0, 0, 5000), "tone")
+        .appendField("Hz");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#1b84e4");
+ this.setTooltip("Play a tone at a frequency in Hz.");
  this.setHelpUrl("");
   }
 };

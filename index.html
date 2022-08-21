@@ -62,11 +62,14 @@
             </td>
             <td class="tabmax">
 
-              <button type="button">Load Program</button>
-              <button id="saveButton">Save Program</button>
-              <button id="linkButton">Save Program</button>
-              <button id="trashButton">Delete Program</button>
-              <button id="runButton">Flash Code to Robot</button>
+              <label class="input-button">Load Blocks:&nbsp;<input accept=".blockly,
+              text/plain" type="file" id="fileToLoad" name="myFiles" onchange="loadBlocklyCodeFromFile();"/></label>
+              <!--button onclick="loadBlocklyCodeFromFile()">Load Blocks</button-->
+              <button onclick="saveBlocklyCodeToFile()">Save Blocks</button>
+              <!--button id="linkButton">Save Program</button-->
+              <button id="trashButton">Delete Blocks</button>
+              <!--button id="runButton">Flash Code to Robot</button-->
+              <button onclick="saveCode()">Flash Code to Board</button>
 
               <!--button id="trashButton" class="notext" title="...">
                 <img src='../../media/1x1.gif' class="trash icon21">
@@ -98,32 +101,45 @@
 
 
 
-
   <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
     <category name="Movement" colour= "#7B1FA2">
+      <block type="move_speed"></block>
       <block type="move_distance"></block>
       <block type="move_start"></block>
-      <block type="move_speed"></block>
+      <block type="move_stop"></block>
       <block type="move_spin"></block>
       <block type="move_pivot"></block>
       <block type="move_steering"></block>
     </category>
 
-    <category name="Motors" colour= "#db2457">
-
-    </category>
-
     <category name="Sensors" colour= "#ec5b13">
       <block type="sensor_ultrasonic"></block>
       <block type="sensor_line"></block>
-      <block type="event_gray_button"></block>
-      <block type="event_green_button"></block>
     </category>
 
     <category name="Control" colour= "#eea011">
       <block type="event_wait_for_start"></block>
       <block type="delay"></block>
+      <block type="event_green_button"></block>
+      <block type="event_gray_button"></block>
     </category>
+
+    <category name="Servos" colour= "#db2457">
+      <block type="move_servo"></block>
+    </category>
+
+    <category name="Pixels" colour= "#1ecbe1">
+      <block type="pixel_color"></block>
+      <block type="pixels_off"></block>
+    </category>
+
+    <category name="Sound" colour= "#1b84e4">
+      <block type="sound_tone"></block>
+      <block type="sound_note"></block>
+      <block type="sound_stop"></block>
+    </category>
+
+    <sep></sep>
 
     <category name="%{BKY_CATLOGIC}" colour="%{BKY_LOGIC_HUE}">
       <block type="controls_if"></block>
@@ -434,6 +450,71 @@
     <category name="%{BKY_CATVARIABLES}" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
     <category name="%{BKY_CATFUNCTIONS}" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>
   </xml>
+
+<script>
+
+      function saveCode() {
+            var code = Blockly.Python.workspaceToCode(Code.workspace);
+            savePythonCodeToFile(code, "code.py");
+          }
+
+      function savePythonCodeToFile(data, fileName) {
+            var a = document.createElement("a");
+            document.body.appendChild(a);
+            a.style = "display: none";
+
+            var json = JSON.stringify(data),
+                blob = new Blob([data], {type: "text/plain;charset=utf-8"}),
+                url = window.URL.createObjectURL(blob);
+            a.href = url;
+            a.download = fileName;
+            a.click();
+            window.URL.revokeObjectURL(url);
+    }
+
+    function saveBlocklyCodeToFile() {
+            var a = document.createElement("a");
+            document.body.appendChild(a);
+            a.style = "display: none";
+
+            var xml = Blockly.Xml.workspaceToDom(Code.workspace);
+            var xml_text = Blockly.Xml.domToPrettyText(xml);
+
+            var json = JSON.stringify(xml_text),
+                blob = new Blob([xml_text], {type: "text/plain;charset=utf-8"}),
+                url = window.URL.createObjectURL(blob);
+            a.href = url;
+            a.download = "code.blockly";
+            a.click();
+            window.URL.revokeObjectURL(url);
+    }
+
+    function loadBlocklyCodeFromFile() {
+            const selectedFile = document.getElementById('fileToLoad').files[0];
+            // update the new file name
+            currentFileName = selectedFile.name;
+
+            const reader = new FileReader();
+            reader.onload = (function(evt) {
+              var result = evt.target.result;
+
+              try {
+                var xml = Blockly.Xml.textToDom(result);
+                // clear editor first
+                Blockly.mainWorkspace.clear();
+                Blockly.Xml.domToWorkspace(xml, Code.workspace);
+              }
+              catch(err) {
+                alert("Not a Blockly file.");
+              }
+
+            });
+            reader.readAsText(selectedFile);
+    }
+
+</script>
+
+
 
 </body>
 </html>
