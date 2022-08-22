@@ -172,10 +172,10 @@ Code.changeLanguage = function() {
  * Changes the output language by clicking the tab matching
  * the selected language in the codeMenu.
  */
-Code.changeCodingLanguage = function() {
-  var codeMenu = document.getElementById('code_menu');
-  Code.tabClick(codeMenu.options[codeMenu.selectedIndex].value);
-}
+//Code.changeCodingLanguage = function() {
+//  var codeMenu = document.getElementById('code_menu');
+//  Code.tabClick(codeMenu.options[codeMenu.selectedIndex].value);
+//}
 
 /**
  * Bind a function to a button's click event.
@@ -328,13 +328,13 @@ Code.tabClick = function(clickedName) {
     codeMenuTab.className = 'tabon';
   }
   // Sync the menu's value with the clicked tab value if needed.
-  var codeMenu = document.getElementById('code_menu');
-  for (var i = 0; i < codeMenu.options.length; i++) {
-    if (codeMenu.options[i].value === clickedName) {
-      codeMenu.selectedIndex = i;
-      break;
-    }
-  }
+//  var codeMenu = document.getElementById('code_menu');
+//  for (var i = 0; i < codeMenu.options.length; i++) {
+//    if (codeMenu.options[i].value === clickedName) {
+//      codeMenu.selectedIndex = i;
+//      break;
+//    }
+//  }
   Blockly.svgResize(Code.workspace);
 };
 
@@ -555,12 +555,12 @@ Code.initLanguage = function() {
   languageMenu.addEventListener('change', Code.changeLanguage, true);
 
   // Populate the coding language selection menu.
-  var codeMenu = document.getElementById('code_menu');
-  codeMenu.options.length = 0;
-  for (var i = 1; i < Code.TABS_.length; i++) {
-    codeMenu.options.add(new Option(Code.TABS_DISPLAY_[i], Code.TABS_[i]));
-  }
-  codeMenu.addEventListener('change', Code.changeCodingLanguage);
+//  var codeMenu = document.getElementById('code_menu');
+//  codeMenu.options.length = 0;
+//  for (var i = 1; i < Code.TABS_.length; i++) {
+//    codeMenu.options.add(new Option(Code.TABS_DISPLAY_[i], Code.TABS_[i]));
+//  }
+//  codeMenu.addEventListener('change', Code.changeCodingLanguage);
 
   // Inject language strings.
   document.title += ' ' + MSG['title'];

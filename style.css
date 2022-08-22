@@ -99,6 +99,10 @@ h1 {
 
 /* Tabs */
 
+#code_menu{
+  display: none;
+}
+
 #tab_json {
   display: none;
 }

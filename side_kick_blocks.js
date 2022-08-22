@@ -158,7 +158,7 @@ Blockly.Blocks['event_green_button'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("green button is")
-        .appendField(new Blockly.FieldDropdown([["pressed","pressed"], ["not pressed","released"]]), "state");
+        .appendField(new Blockly.FieldDropdown([["pressed","pressed"], ["not pressed","not_pressed"]]), "state");
     this.setOutput(true, "Boolean");
     this.setColour("#eea011");
  this.setTooltip("Read the state of the green button. Returns true if condition is met.");
@@ -170,7 +170,7 @@ Blockly.Blocks['event_gray_button'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("black button is")
-        .appendField(new Blockly.FieldDropdown([["pressed","pressed"], ["not pressed","released"]]), "state");
+        .appendField(new Blockly.FieldDropdown([["pressed","pressed"], ["not pressed","not_pressed"]]), "state");
     this.setOutput(true, "Boolean");
     this.setColour("#eea011");
  this.setTooltip("Read the state of the black button. Returns true if condition is met.");

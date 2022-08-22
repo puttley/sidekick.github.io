@@ -2,7 +2,7 @@ Blockly.Python['move_distance'] = function(block) {
   var dropdown_direction = block.getFieldValue('direction');
   var number_distance = block.getFieldValue('distance');
   // TODO: Assemble Python into code variable.
-  var code = 'move_distance(' + dropdown_direction + ',' + number_distance + ')\n';
+  var code = 'move_distance(' + '"'+ dropdown_direction + '"' + ',' + number_distance + ')\n';
   return code;
 };
 

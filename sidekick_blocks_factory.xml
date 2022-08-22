@@ -488,7 +488,7 @@
                 <field name="USER0">pressed</field>
                 <field name="CPU0">pressed</field>
                 <field name="USER1">not pressed</field>
-                <field name="CPU1">released</field>
+                <field name="CPU1">not_pressed</field>
               </block>
             </next>
           </block>
@@ -533,7 +533,7 @@
                 <field name="USER0">pressed</field>
                 <field name="CPU0">pressed</field>
                 <field name="USER1">not pressed</field>
-                <field name="CPU1">released</field>
+                <field name="CPU1">not_pressed</field>
               </block>
             </next>
           </block>
