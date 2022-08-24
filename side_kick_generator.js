@@ -14,7 +14,7 @@ Blockly.Python['move_distance'] = function(block) {
 Blockly.Python['move_start'] = function(block) {
   var dropdown_direction = block.getFieldValue('direction');
   // TODO: Assemble Python into code variable.
-  var code = 'move_start(' + dropdown_direction + ')\n';
+  var code = 'move_start(' + '"' + dropdown_direction + '"' + ')\n';
   return code;
 };
 
@@ -88,7 +88,7 @@ Blockly.Python['move_servo'] = function(block) {
   value_speed = parseInt(value_speed);
   value_speed = Math.abs(value_speed);
 
-  var code = 'move_servo(' + dropdown_motor + ',' + value_position + ',' + value_speed + ')\n';
+  var code = 'move_servo(' + '"' + dropdown_motor + '"' + ',' + value_position + ',' + value_speed + ')\n';
   return code;
 };
 
