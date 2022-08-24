@@ -94,7 +94,7 @@ Blockly.Python['move_servo'] = function(block) {
 
 Blockly.Python['event_wait_for_start'] = function(block) {
   // TODO: Assemble Python into code variable.
-  var code = 'wait_start_button()\n';
+  var code = 'from SideKick import *\n' + 'wait_start_button()\n';
   return code;
 };
 
