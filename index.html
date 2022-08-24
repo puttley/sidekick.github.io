@@ -103,13 +103,48 @@
 
   <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
     <category name="Movement" colour= "#7B1FA2">
-      <block type="move_speed"></block>
-      <block type="move_distance"></block>
+      <block type="move_speed">
+        <value name="speed">
+          <shadow type="math_number">
+            <field name="NUM">50</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="move_distance">
+        <value name="distance">
+          <shadow type="math_number">
+            <field name="NUM">10</field>
+          </shadow>
+        </value>
+      </block>
       <block type="move_start"></block>
       <block type="move_stop"></block>
-      <block type="move_spin"></block>
-      <block type="move_pivot"></block>
-      <block type="move_steering"></block>
+      <block type="move_spin">
+        <value name="degrees">
+          <shadow type="math_number">
+            <field name="NUM">90</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="move_pivot">
+        <value name="degrees">
+          <shadow type="math_number">
+            <field name="NUM">90</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="move_steering">
+        <value name="left speed">
+          <shadow type="math_number">
+            <field name="NUM">50</field>
+          </shadow>
+        </value>
+        <value name="right speed">
+          <shadow type="math_number">
+            <field name="NUM">50</field>
+          </shadow>
+        </value>
+      </block>
     </category>
 
     <category name="Sensors" colour= "#ec5b13">
@@ -125,12 +160,39 @@
     </category>
 
     <category name="Servos" colour= "#db2457">
-      <block type="move_servo"></block>
+      <block type="move_servo">
+        <value name="position">
+          <shadow type="math_number">
+            <field name="NUM">90</field>
+          </shadow>
+        </value>
+        <value name="speed">
+          <shadow type="math_number">
+            <field name="NUM">50</field>
+          </shadow>
+        </value>
+      </block>
     </category>
 
-    <category name="Pixels" colour= "#1ecbe1">
-      <block type="pixel_color"></block>
+    <category name="Pixels" colour= "#741e1c">
+      <block type="pixel_color">
+        <!--value name="color">
+          <shadow type="colour_picker"/>
+        </value-->
+        <value name="color">
+          <shadow type="colour_picker">
+            <field name="COLOUR">#ff0000</field>
+          </shadow>
+        </value>
+        <value name="brightness">
+          <shadow type="math_number">
+            <field name="NUM">50</field>
+          </shadow>
+        </value>
+      </block>
       <block type="pixels_off"></block>
+      <block type="color_picker"></block>
+      <block type="color_random"></block>
     </category>
 
     <category name="Sound" colour= "#1b84e4">
@@ -408,7 +470,7 @@
       </block>
       <block type="lists_sort"></block>
     </category>
-    <category name="%{BKY_CATCOLOUR}" colour="%{BKY_COLOUR_HUE}">
+    <!--category name="%{BKY_CATCOLOUR}" colour="%{BKY_COLOUR_HUE}">
       <block type="colour_picker"></block>
       <block type="colour_random"></block>
       <block type="colour_rgb">
@@ -445,7 +507,7 @@
           </shadow>
         </value>
       </block>
-    </category>
+    </category-->
     <sep></sep>
     <category name="%{BKY_CATVARIABLES}" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
     <category name="%{BKY_CATFUNCTIONS}" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>

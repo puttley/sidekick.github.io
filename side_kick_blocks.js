@@ -6,8 +6,8 @@ Blockly.Blocks['move_distance'] = {
         .appendField(new Blockly.FieldDropdown([["forward","forward"], ["reverse","reverse"]]), "direction");
     this.appendDummyInput()
         .appendField("for");
-    this.appendDummyInput()
-        .appendField(new Blockly.FieldNumber(0), "distance");
+    this.appendValueInput("distance")
+        .setCheck("Number");
     this.appendDummyInput()
         .appendField("cm");
     this.setInputsInline(true);
@@ -51,8 +51,8 @@ Blockly.Blocks['move_speed'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("set move speed to");
-    this.appendDummyInput()
-        .appendField(new Blockly.FieldNumber(0, 0, 100), "speed");
+    this.appendValueInput("speed")
+        .setCheck("Number");
     this.appendDummyInput()
         .appendField("%");
     this.setInputsInline(true);
@@ -67,11 +67,13 @@ Blockly.Blocks['move_speed'] = {
 Blockly.Blocks['move_spin'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("spin turn");
+        .appendField("spin");
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["clockwise","clockwise"], ["counterclockwise","counterclockwise"]]), "direction");
+        .appendField(new Blockly.FieldDropdown([["clockwise","clockwise"], ["counter clockwise","counterclockwise"]]), "direction");
+    this.appendValueInput("degrees")
+        .setCheck("Number");
     this.appendDummyInput()
-        .appendField(new Blockly.FieldAngle(90), "degrees");
+        .appendField("degrees");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -84,11 +86,13 @@ Blockly.Blocks['move_spin'] = {
 Blockly.Blocks['move_pivot'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("pivot turn");
+        .appendField("pivot");
     this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown([["left","left"], ["right","right"]]), "direction");
+    this.appendValueInput("degrees")
+        .setCheck("Number");
     this.appendDummyInput()
-        .appendField(new Blockly.FieldAngle(90), "degrees");
+        .appendField("degrees");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -103,14 +107,14 @@ Blockly.Blocks['move_steering'] = {
     this.appendDummyInput()
         .appendField("start moving")
         .appendField(new Blockly.FieldDropdown([["forward","forward"], ["reverse","reverse"]]), "direction");
-    this.appendDummyInput()
-        .appendField("left speed")
-        .appendField(new Blockly.FieldNumber(0, 0, 100), "left speed");
+    this.appendValueInput("left speed")
+        .setCheck("Number")
+        .appendField("left speed");
     this.appendDummyInput()
         .appendField("%");
-    this.appendDummyInput()
-        .appendField("right speed")
-        .appendField(new Blockly.FieldNumber(0, 0, 100), "right speed");
+    this.appendValueInput("right speed")
+        .setCheck("Number")
+        .appendField("right speed");
     this.appendDummyInput()
         .appendField("%");
     this.setInputsInline(true);
@@ -122,18 +126,22 @@ Blockly.Blocks['move_steering'] = {
   }
 };
 
+
 Blockly.Blocks['move_servo'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("move");
     this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown([["servo 1","servo_1"], ["servo 2","servo_2"], ["both servos","servo_1_2"]]), "motor");
+    this.appendValueInput("position")
+        .setCheck("Number")
+        .appendField("to");
     this.appendDummyInput()
-        .appendField("to")
-        .appendField(new Blockly.FieldNumber(0, 0, 180), "position")
-        .appendField("degrees at")
-        .appendField(new Blockly.FieldNumber(0, 0, 100), "speed")
-        .appendField("speed");
+        .appendField("degrees at");
+    this.appendValueInput("speed")
+        .setCheck("Number");
+    this.appendDummyInput()
+        .appendField("% speed");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -222,15 +230,19 @@ Blockly.Blocks['pixel_color'] = {
     this.appendDummyInput()
         .appendField("set")
         .appendField(new Blockly.FieldDropdown([["pixel 1","pixel_1"], ["pixel 2","pixel_2"], ["pixel 3","pixel_3"], ["pixel 4","pixel_4"], ["all pixels","pixel_all"]]), "pixel")
-        .appendField("to")
-        .appendField(new Blockly.FieldColour("#ff0000"), "color")
-        .appendField("at")
-        .appendField(new Blockly.FieldNumber(0, 0, 100), "brightness")
+        .appendField("to");
+    this.appendValueInput("color")
+        .setCheck("Colour");
+    this.appendDummyInput()
+        .appendField("color at");
+    this.appendValueInput("brightness")
+        .setCheck("Number");
+    this.appendDummyInput()
         .appendField("% brightness");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour("#1ecbe1");
+    this.setColour("#891813");
  this.setTooltip("Set the pixel to a color and set the brightness.");
  this.setHelpUrl("");
   }
@@ -245,11 +257,34 @@ Blockly.Blocks['pixels_off'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour("#1ecbe1");
+    this.setColour("#891813");
  this.setTooltip("Turn off selected pixel(s).");
  this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['color_random'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("random color");
+    this.setOutput(true, "Colour");
+    this.setColour("#891813");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['color_picker'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldColour("#ff0000"), "color");
+    this.setOutput(true, "Colour");
+    this.setColour("#891813");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
 
 Blockly.Blocks['sound_stop'] = {
   init: function() {

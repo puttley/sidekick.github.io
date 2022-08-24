@@ -1,8 +1,13 @@
+
 Blockly.Python['move_distance'] = function(block) {
   var dropdown_direction = block.getFieldValue('direction');
-  var number_distance = block.getFieldValue('distance');
+  var value_distance = Blockly.Python.valueToCode(block, 'distance', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = 'move_distance(' + '"'+ dropdown_direction + '"' + ',' + number_distance + ')\n';
+
+    value_distance = value_distance.replace(/\(|\)/g, '');    // strips parenthesis out of negative string
+    value_distance = parseInt(value_distance);                // integers only
+    value_distance = Math.abs(value_distance);
+  var code = 'move_distance(' + '"'+ dropdown_direction + '"' + ',' + value_distance + ')\n';
   return code;
 };
 
@@ -20,43 +25,70 @@ Blockly.Python['move_stop'] = function(block) {
 };
 
 Blockly.Python['move_speed'] = function(block) {
-  var number_speed = block.getFieldValue('speed');
+  var value_speed = Blockly.Python.valueToCode(block, 'speed', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = 'set_move_speed(' + number_speed + ')\n';
+  value_speed = value_speed.replace(/\(|\)/g, '');    // strips parenthesis out of negative string
+  value_speed = parseInt(value_speed);                // integers only
+  value_speed = Math.abs(value_speed);
+  var code = 'set_move_speed(' + value_speed + ')\n';
   return code;
 };
+
 
 Blockly.Python['move_spin'] = function(block) {
   var dropdown_direction = block.getFieldValue('direction');
-  var angle_degrees = block.getFieldValue('degrees');
+  var value_degrees = Blockly.Python.valueToCode(block, 'degrees', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = 'move_spin(' + dropdown_direction + ',' + angle_degrees +')\n';
+  value_degrees = value_degrees.replace(/\(|\)/g, '');    // strips parenthesis out of negative string
+  value_degrees = parseInt(value_degrees);
+  value_degrees = Math.abs(value_degrees);               // integers only
+  var code = 'move_spin(' + '"' + dropdown_direction + '"' + ',' + value_degrees +')\n';
   return code;
 };
+
 
 Blockly.Python['move_pivot'] = function(block) {
   var dropdown_direction = block.getFieldValue('direction');
-  var angle_degrees = block.getFieldValue('degrees');
+  var value_degrees = Blockly.Python.valueToCode(block, 'degrees', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = 'move_pivot(' + dropdown_direction + ',' + angle_degrees +')\n';
+  value_degrees = value_degrees.replace(/\(|\)/g, '');    // strips parenthesis out of negative string
+  value_degrees = parseInt(value_degrees);
+  value_degrees = Math.abs(value_degrees);             // integers only
+  var code = 'move_pivot(' + '"' + dropdown_direction + '"' + ',' + value_degrees +')\n';
   return code;
 };
+
 
 Blockly.Python['move_steering'] = function(block) {
   var dropdown_direction = block.getFieldValue('direction');
-  var number_left_speed = block.getFieldValue('left speed');
-  var number_right_speed = block.getFieldValue('right speed');
+  var value_left_speed = Blockly.Python.valueToCode(block, 'left speed', Blockly.Python.ORDER_ATOMIC);
+  var value_right_speed = Blockly.Python.valueToCode(block, 'right speed', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = 'move_steering(' + dropdown_direction + ',' + number_left_speed + ',' + number_right_speed + ')\n';
+  value_left_speed = value_left_speed.replace(/\(|\)/g, '');      // strips parenthesis out of negative string
+  value_right_speed = value_right_speed.replace(/\(|\)/g, '');    // strips parenthesis out of negative string
+  value_left_speed = parseInt(value_left_speed);
+  value_right_speed = parseInt(value_right_speed);
+  value_left_speed = Math.abs(value_left_speed);
+  value_right_speed = Math.abs(value_right_speed);               // integers only
+  var code = 'move_steering(' + '"' + dropdown_direction + '"' + ',' + value_left_speed + ',' + value_right_speed + ')\n';
   return code;
 };
 
+
 Blockly.Python['move_servo'] = function(block) {
   var dropdown_motor = block.getFieldValue('motor');
-  var number_position = block.getFieldValue('position');
-  var number_speed = block.getFieldValue('speed');
+  var value_position = Blockly.Python.valueToCode(block, 'position', Blockly.Python.ORDER_ATOMIC);
+  var value_speed = Blockly.Python.valueToCode(block, 'speed', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = 'move_servo(' + dropdown_motor + ',' + number_position + ',' + number_speed + ')\n';
+  value_position = value_position.replace(/\(|\)/g, '');    // strips parenthesis out of negative string
+  value_position = parseInt(value_position);
+  value_position = Math.abs(value_position);
+
+  value_speed = value_speed.replace(/\(|\)/g, '');    // strips parenthesis out of negative string
+  value_speed = parseInt(value_speed);
+  value_speed = Math.abs(value_speed);
+
+  var code = 'move_servo(' + dropdown_motor + ',' + value_position + ',' + value_speed + ')\n';
   return code;
 };
 
@@ -99,16 +131,27 @@ Blockly.Python['sensor_line'] = function(block) {
 Blockly.Python['delay'] = function(block) {
   var number_name = block.getFieldValue('NAME');
   // TODO: Assemble Python into code variable.
-  var code = '...\n';
+  var code = 'time.sleep(' + number_name + ')\n';
   return code;
 };
 
+
 Blockly.Python['pixel_color'] = function(block) {
   var dropdown_pixel = block.getFieldValue('pixel');
-  var colour_color = block.getFieldValue('color');
-  var number_brightness = block.getFieldValue('brightness');
-  // TODO: Assemble Python into code variable.
-  var code = '...\n';
+  var value_color = Blockly.Python.valueToCode(block, 'color', Blockly.Python.ORDER_ATOMIC);
+  var value_brightness = Blockly.Python.valueToCode(block, 'brightness', Blockly.Python.ORDER_ATOMIC);
+  value_brightness = value_brightness.replace(/\(|\)/g, '');    // strips parenthesis out of negative string
+  value_brightness = parseInt(value_brightness);
+  value_brightness = Math.abs(value_brightness);
+  var color1 = value_color;
+  var re = /[0-9A-Fa-f]{6}/g;
+  var inputString = color1;
+  if(re.test(inputString)) {  // check to see if it's hex format color
+      var code = 'set_pixel(' + '"' + dropdown_pixel + '"' + ','  +  value_color + ',' + value_brightness + ')\n';
+  } else {                    // non hex format (random color picker)
+      var code = 'set_pixel(' + '"' + dropdown_pixel + '"' + ','  + value_color + ',' + value_brightness + ')\n';
+  }
+  re.lastIndex = 0; // be sure to reset the index after using .text()
   return code;
 };
 
@@ -117,6 +160,21 @@ Blockly.Python['pixels_off'] = function(block) {
   // TODO: Assemble Python into code variable.
   var code = '...\n';
   return code;
+};
+
+Blockly.Python['color_random'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  var code = "'#%06x' % random.randint(0, 2**24 - 1)";
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['color_picker'] = function(block) {
+  var colour_color = block.getFieldValue('color');
+  // TODO: Assemble Python into code variable.
+  var code = "'" + colour_color + "'";
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];
 };
 
 Blockly.Python['sound_tone'] = function(block) {

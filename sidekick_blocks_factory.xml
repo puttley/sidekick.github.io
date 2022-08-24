@@ -33,19 +33,15 @@
                   </block>
                 </statement>
                 <next>
-                  <block type="input_dummy" id="6cd|VJ?BY=UR*z#!,9^G">
+                  <block type="input_value" id="bK0uQdL$y{Y4k}m=t,o%">
+                    <field name="INPUTNAME">distance</field>
                     <field name="ALIGN">LEFT</field>
-                    <statement name="FIELDS">
-                      <block type="field_number" id="8YOeI6.KI;5CgB(x2`$:">
-                        <field name="VALUE">0</field>
-                        <field name="FIELDNAME">distance</field>
-                        <field name="MIN">-Infinity</field>
-                        <field name="MAX">Infinity</field>
-                        <field name="PRECISION">0</field>
-                      </block>
-                    </statement>
+                    <value name="TYPE">
+                      <shadow type="type_null" id="Fy@9vXs=glVQd|Dpc[{f"></shadow>
+                      <block type="type_number" id="^/29YqvBH#qo*gfqrfO("></block>
+                    </value>
                     <next>
-                      <block type="input_dummy" id="Cd%j4.YAgf^FRjM[.mqj">
+                      <block type="input_dummy" id="^exx|H#v)|bp/U.14ml:">
                         <field name="ALIGN">LEFT</field>
                         <statement name="FIELDS">
                           <block type="field_static" id="af9yq}h}v~)K[n7g,i+:">
@@ -158,17 +154,13 @@
           </block>
         </statement>
         <next>
-          <block type="input_dummy" id="WS=cW3o~hpk|a~X:e@oc">
+          <block type="input_value" id="$zu[cwGIv5yeaE+8Mdmg">
+            <field name="INPUTNAME">speed</field>
             <field name="ALIGN">LEFT</field>
-            <statement name="FIELDS">
-              <block type="field_number" id="zl.Cbnx4QdxP:DuJCKO(">
-                <field name="VALUE">0</field>
-                <field name="FIELDNAME">speed</field>
-                <field name="MIN">0</field>
-                <field name="MAX">100</field>
-                <field name="PRECISION">0</field>
-              </block>
-            </statement>
+            <value name="TYPE">
+              <shadow type="type_null" id="%xNu?2`O,dkj8^0QlP^4"></shadow>
+              <block type="type_number" id="~(3Y#EH/+v%llPI^1^N2"></block>
+            </value>
             <next>
               <block type="input_dummy" id="W5WwUlj@`Rc3hZ_1a(J(">
                 <field name="ALIGN">LEFT</field>
@@ -215,7 +207,7 @@
         <field name="ALIGN">LEFT</field>
         <statement name="FIELDS">
           <block type="field_static" id="7/BaGxr%#8X6Cy2J:-B9">
-            <field name="TEXT">spin turn</field>
+            <field name="TEXT">spin</field>
           </block>
         </statement>
         <next>
@@ -227,19 +219,28 @@
                 <field name="FIELDNAME">direction</field>
                 <field name="USER0">clockwise</field>
                 <field name="CPU0">clockwise</field>
-                <field name="USER1">counterclockwise</field>
+                <field name="USER1">counter clockwise</field>
                 <field name="CPU1">counterclockwise</field>
               </block>
             </statement>
             <next>
-              <block type="input_dummy" id="8.94^GZ^$XKTRCw^8hPD">
+              <block type="input_value" id="rLBs`o/y8v/WMHo2]wA_">
+                <field name="INPUTNAME">degrees</field>
                 <field name="ALIGN">LEFT</field>
-                <statement name="FIELDS">
-                  <block type="field_angle" id="j-AeTT1,W(B!=h*#=EZ5">
-                    <field name="ANGLE">90</field>
-                    <field name="FIELDNAME">degrees</field>
+                <value name="TYPE">
+                  <shadow type="type_null" id="_b?$(LAPuAGxnu/FOvLC"></shadow>
+                  <block type="type_number" id="LTiME/a_B{}$`NX.B@KE"></block>
+                </value>
+                <next>
+                  <block type="input_dummy" id="q-Z:QllaU,``%|!XfWvt">
+                    <field name="ALIGN">LEFT</field>
+                    <statement name="FIELDS">
+                      <block type="field_static" id="]w3XlNR5wN$%^/hgj}Wm">
+                        <field name="TEXT">degrees</field>
+                      </block>
+                    </statement>
                   </block>
-                </statement>
+                </next>
               </block>
             </next>
           </block>
@@ -278,7 +279,7 @@
         <field name="ALIGN">LEFT</field>
         <statement name="FIELDS">
           <block type="field_static" id="7/BaGxr%#8X6Cy2J:-B9">
-            <field name="TEXT">pivot turn</field>
+            <field name="TEXT">pivot</field>
           </block>
         </statement>
         <next>
@@ -295,14 +296,23 @@
               </block>
             </statement>
             <next>
-              <block type="input_dummy" id="8.94^GZ^$XKTRCw^8hPD">
+              <block type="input_value" id="oHek^vV?d4wB;yw+:hv7">
+                <field name="INPUTNAME">degrees</field>
                 <field name="ALIGN">LEFT</field>
-                <statement name="FIELDS">
-                  <block type="field_angle" id="j-AeTT1,W(B!=h*#=EZ5">
-                    <field name="ANGLE">90</field>
-                    <field name="FIELDNAME">degrees</field>
+                <value name="TYPE">
+                  <shadow type="type_null" id="XB%#9EY%PFk:#e3_o~;O"></shadow>
+                  <block type="type_number" id="(UAFb,e/,@^cnNXd#e-b"></block>
+                </value>
+                <next>
+                  <block type="input_dummy" id="8.94^GZ^$XKTRCw^8hPD">
+                    <field name="ALIGN">LEFT</field>
+                    <statement name="FIELDS">
+                      <block type="field_static" id="*[T]^moRWBJa..hmEk*O">
+                        <field name="TEXT">degrees</field>
+                      </block>
+                    </statement>
                   </block>
-                </statement>
+                </next>
               </block>
             </next>
           </block>
@@ -355,22 +365,18 @@
           </block>
         </statement>
         <next>
-          <block type="input_dummy" id="[hmNOgG*-@lFX6o%]5{3">
+          <block type="input_value" id="C8JB,6}~;v%bCSZ9e%I:">
+            <field name="INPUTNAME">left speed</field>
             <field name="ALIGN">LEFT</field>
             <statement name="FIELDS">
               <block type="field_static" id="Y`RzG~DhIUs8{XLb5s5|">
                 <field name="TEXT">left speed</field>
-                <next>
-                  <block type="field_number" id="#Gt#7BAJRPegGkOX]sl=">
-                    <field name="VALUE">0</field>
-                    <field name="FIELDNAME">left speed</field>
-                    <field name="MIN">0</field>
-                    <field name="MAX">100</field>
-                    <field name="PRECISION">0</field>
-                  </block>
-                </next>
               </block>
             </statement>
+            <value name="TYPE">
+              <shadow type="type_null" id="rTiwCRnVbOygu)eUY[BV"></shadow>
+              <block type="type_number" id="R;i|Y*YFd,[ruGEun)M~"></block>
+            </value>
             <next>
               <block type="input_dummy" id="k`[[1qbVAC}.zgs:C{yQ">
                 <field name="ALIGN">LEFT</field>
@@ -380,22 +386,18 @@
                   </block>
                 </statement>
                 <next>
-                  <block type="input_dummy" id="8.94^GZ^$XKTRCw^8hPD">
+                  <block type="input_value" id="yC0axwUyMB8Bk)~v:X7O">
+                    <field name="INPUTNAME">right speed</field>
                     <field name="ALIGN">LEFT</field>
                     <statement name="FIELDS">
                       <block type="field_static" id="m3)B@1OH(m=7+wvsGF-M">
                         <field name="TEXT">right speed</field>
-                        <next>
-                          <block type="field_number" id="`~4{v!TqeU2Fbm?y=}lj">
-                            <field name="VALUE">0</field>
-                            <field name="FIELDNAME">right speed</field>
-                            <field name="MIN">0</field>
-                            <field name="MAX">100</field>
-                            <field name="PRECISION">0</field>
-                          </block>
-                        </next>
                       </block>
                     </statement>
+                    <value name="TYPE">
+                      <shadow type="type_null" id="|Wed|X({Rf38?$2zFeew"></shadow>
+                      <block type="type_number" id="2b^9s(mKX-mH|-|s{~FL"></block>
+                    </value>
                     <next>
                       <block type="input_dummy" id="FKXESu~ZFQ%$8(HCh5i#">
                         <field name="ALIGN">LEFT</field>
@@ -757,41 +759,48 @@
               </block>
             </statement>
             <next>
-              <block type="input_dummy" id="9{ACpBvsSsK[:/nLT~pm">
+              <block type="input_value" id="$N{(U5S[96+;h1E#tvPH">
+                <field name="INPUTNAME">position</field>
                 <field name="ALIGN">LEFT</field>
                 <statement name="FIELDS">
-                  <block type="field_static" id="=-:m~Y{4UfQ(CSw:1aIJ">
+                  <block type="field_static" id="GY!S{YD~cwB[GvofDg|P">
                     <field name="TEXT">to</field>
+                  </block>
+                </statement>
+                <value name="TYPE">
+                  <shadow type="type_null" id="SYT1r*GRL+F[iQ5ebQ3e"></shadow>
+                  <block type="type_number" id="lJxb.#HP%`JUIw?m[;]+"></block>
+                </value>
+                <next>
+                  <block type="input_dummy" id="9{ACpBvsSsK[:/nLT~pm">
+                    <field name="ALIGN">LEFT</field>
+                    <statement name="FIELDS">
+                      <block type="field_static" id="=-:m~Y{4UfQ(CSw:1aIJ">
+                        <field name="TEXT">degrees at</field>
+                      </block>
+                    </statement>
                     <next>
-                      <block type="field_number" id="#Ni4}b-Hf+ZB;RyW7He~">
-                        <field name="VALUE">0</field>
-                        <field name="FIELDNAME">position</field>
-                        <field name="MIN">0</field>
-                        <field name="MAX">180</field>
-                        <field name="PRECISION">0</field>
+                      <block type="input_value" id="s{E;Kkw:Ijs+d:r[alHY">
+                        <field name="INPUTNAME">speed</field>
+                        <field name="ALIGN">LEFT</field>
+                        <value name="TYPE">
+                          <shadow type="type_null" id="7@(JncV|`j]mTtiG3@Ao"></shadow>
+                          <block type="type_number" id="38v=x:TT)l5}r+Fs_uaq"></block>
+                        </value>
                         <next>
-                          <block type="field_static" id="@Ii/#ZK.RR/KNKd?{[L+">
-                            <field name="TEXT">degrees at</field>
-                            <next>
-                              <block type="field_number" id="|xfC3,nYJyL0.;lDmCwt">
-                                <field name="VALUE">0</field>
-                                <field name="FIELDNAME">speed</field>
-                                <field name="MIN">0</field>
-                                <field name="MAX">100</field>
-                                <field name="PRECISION">0</field>
-                                <next>
-                                  <block type="field_static" id="#r-UrJ)L#mlIMTn%];Cj">
-                                    <field name="TEXT">speed</field>
-                                  </block>
-                                </next>
+                          <block type="input_dummy" id="|c/tA@I.Xn79!,8v[1`]">
+                            <field name="ALIGN">LEFT</field>
+                            <statement name="FIELDS">
+                              <block type="field_static" id="D@GFi^%W#Y!xjeGP@JP]">
+                                <field name="TEXT">% speed</field>
                               </block>
-                            </next>
+                            </statement>
                           </block>
                         </next>
                       </block>
                     </next>
                   </block>
-                </statement>
+                </next>
               </block>
             </next>
           </block>
@@ -848,29 +857,46 @@
                 <next>
                   <block type="field_static" id="9|^pvPX^up@`X),;G9L)">
                     <field name="TEXT">to</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="input_value" id="8+/OJ8O?d58uDLwX*^KQ">
+            <field name="INPUTNAME">color</field>
+            <field name="ALIGN">LEFT</field>
+            <value name="TYPE">
+              <shadow type="type_null" id="OG!pRRnDqE:n2]Y#x*j!"></shadow>
+              <block type="type_other" id="!1D9}n6bkJ:t.k7Yctyb">
+                <field name="TYPE">Colour</field>
+              </block>
+            </value>
+            <next>
+              <block type="input_dummy" id="dT7F%-]HJS/iY)jA$(Cx">
+                <field name="ALIGN">LEFT</field>
+                <statement name="FIELDS">
+                  <block type="field_static" id=",_Wp%z@Nd%!Z~v*hfuj]">
+                    <field name="TEXT">color at</field>
+                  </block>
+                </statement>
+                <next>
+                  <block type="input_value" id="y^==nyGAXg4}Vf625Q-S">
+                    <field name="INPUTNAME">brightness</field>
+                    <field name="ALIGN">LEFT</field>
+                    <value name="TYPE">
+                      <shadow type="type_null" id="SR8=`1,2R3I$HBrjmZ+f"></shadow>
+                      <block type="type_number" id="8-{FQj}aOq-;U(g_8mD5"></block>
+                    </value>
                     <next>
-                      <block type="field_colour" id="xdShI.WaVZeczSip-)v_">
-                        <field name="COLOUR">#ff0000</field>
-                        <field name="FIELDNAME">color</field>
-                        <next>
-                          <block type="field_static" id=",_Wp%z@Nd%!Z~v*hfuj]">
-                            <field name="TEXT">at</field>
-                            <next>
-                              <block type="field_number" id="0z.;h79zlV?hwQF==zgW">
-                                <field name="VALUE">0</field>
-                                <field name="FIELDNAME">brightness</field>
-                                <field name="MIN">0</field>
-                                <field name="MAX">100</field>
-                                <field name="PRECISION">0</field>
-                                <next>
-                                  <block type="field_static" id="*oe}D|501Ta#,`H@v/~!">
-                                    <field name="TEXT">% brightness</field>
-                                  </block>
-                                </next>
-                              </block>
-                            </next>
+                      <block type="input_dummy" id="VCt=^Z-75^w=6YA|2!0z">
+                        <field name="ALIGN">LEFT</field>
+                        <statement name="FIELDS">
+                          <block type="field_static" id="*oe}D|501Ta#,`H@v/~!">
+                            <field name="TEXT">% brightness</field>
                           </block>
-                        </next>
+                        </statement>
                       </block>
                     </next>
                   </block>
@@ -878,7 +904,7 @@
               </block>
             </next>
           </block>
-        </statement>
+        </next>
       </block>
     </statement>
     <value name="TOOLTIP">
@@ -1102,6 +1128,81 @@
     </value>
     <value name="COLOUR">
       <block type="colour_hue" id="$%wzJSI`^!aRDkw^7gn{">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="?`S]%EzvGw#Xl:uaL5f`" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">color_random</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="C80Ckx@vw/5I^^KF?sp4">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="/ZP{RqnyO-W~!fa~PgsM">
+            <field name="TEXT">random color</field>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="z6E9*H?S*CXRGUaVv!n/" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="3ejteN0TbALwMkLvFK?t" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="q)itD(_=n|_J3]8;h;g,"></shadow>
+      <block type="type_other" id="yjH5%{jms,lDLIjsUVp*">
+        <field name="TYPE">Colour</field>
+      </block>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="V82ib}=(LhLMEq@7nU1D">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="/#X(_;/k{!v:E)+S4-Jr" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">color picker</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="vv$7O@V62fBl*A~Y)uEL">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_colour" id="+[4.UT~JOXFG^nGL%kH1">
+            <field name="COLOUR">#ff0000</field>
+            <field name="FIELDNAME">color</field>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="sHbEf_dyIZo_QcS.=y20" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="Oxh7D#GFZXynt+(lN3w(" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="O5#M7^QoUhX4Pfi6[4Iz"></shadow>
+      <block type="type_other" id="3y$/p~^#sFq(WZMnp{O_">
+        <field name="TYPE">Colour</field>
+      </block>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="BfTU95BLu_7O/yI*u|%w">
         <mutation colour="#5b67a5"></mutation>
         <field name="HUE">230</field>
       </block>
