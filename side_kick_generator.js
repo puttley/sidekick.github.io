@@ -116,14 +116,14 @@ Blockly.Python['event_gray_button'] = function(block) {
 
 Blockly.Python['sensor_ultrasonic'] = function(block) {
   // TODO: Assemble Python into code variable.
-  var code = 'ultrasonic_distance()\n';
+  var code = 'ultrasonic_distance()';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_NONE];
 };
 
 Blockly.Python['sensor_line'] = function(block) {
   // TODO: Assemble Python into code variable.
-  var code = 'line_finder()\n';
+  var code = 'line_finder()';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_NONE];
 };

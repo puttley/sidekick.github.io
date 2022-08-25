@@ -24,7 +24,7 @@ Blockly.Blocks['move_start'] = {
     this.appendDummyInput()
         .appendField("start moving");
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["forward","forward"], ["reverse","reverse"], ["spin right","spin_right"], ["spin left","spin_left"], ["pivot right","pivot_right"], ["pivot left","pivot left"]]), "direction");
+        .appendField(new Blockly.FieldDropdown([["forward","forward"], ["reverse","reverse"], ["spin right","spin_right"], ["spin left","spin_left"], ["pivot right","pivot_right"], ["pivot left","pivot_left"]]), "direction");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);

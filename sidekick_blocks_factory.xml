@@ -111,7 +111,7 @@
                 <field name="USER4">pivot right</field>
                 <field name="CPU4">pivot_right</field>
                 <field name="USER5">pivot left</field>
-                <field name="CPU5">pivot left</field>
+                <field name="CPU5">pivot_left</field>
               </block>
             </statement>
           </block>
