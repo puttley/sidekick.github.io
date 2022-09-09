@@ -1,5 +1,5 @@
 var MSG = {
-  title: "PITSCO SideKick Robot (BETA)",
+  title: "PITSCO Pyoneer Robot (BETA)",
   blocks: "Blocks",
   linkTooltip: "Save and link to blocks.",
   runTooltip: "Run the program defined by the blocks in the workspace.",

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google" value="notranslate">
-  <title>PITSCO SideKick Robot:</title>
+  <title>PITSCO Pyoneer Robot:</title>
   <link rel="stylesheet" href="style.css">
 
   <script src="./side_kick_blocks.js" defer></script>
@@ -21,13 +21,35 @@
 </head>
 
 
-<body>
+
+  <body style="text-align: left;">
 
 
-  <table width="100%" height="100%">
+
+    <!--video class=myvideo id="videoElement" controls="true" src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4">
+
+    </video>
+
+    <button id="PiP"> Enable Floating Video </button-->
+
+
+    <!--iframe
+      id="videoElement"
+      name="myplayer"
+      class="myvideo"
+      type="text.html"
+      src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=0&controls=2"
+      frameborder="0"
+      style="border: solid 4px #d35e2c"
+      rel="0">
+    </iframe-->
+
+
+
+  <table width="95%" height="85%">
     <tr>
       <td>
-        <h1><!--a href="https://www.pitsco.com"> PITSCO SideKick Robot</a-->
+        <h1><!--a href="https://www.pitsco.com"> PITSCO Pyoneer Robot</a-->
 
           <span id="title">...</span>
         </h1>
@@ -37,7 +59,9 @@
         <a class="privacyLink" href="https://policies.google.com/privacy">Privacy</a>
       </td>
     </tr>
+
     <tr>
+
       <td colspan=2>
         <table width="100%">
           <tr id="tabRow" height="1em">
@@ -53,23 +77,49 @@
             <td class="tabmin tab_collapse">&nbsp;</td>
             <td id="tab_dart" class="taboff tab_collapse">Dart</td>
             <td class="tabmin tab_collapse">&nbsp;</td>
-            <td id="tab_xml" class="taboff tab_collapse">XML</td>
+            <td id="tab_xml" class="taboff tab_collapse">XML
+
+            </td>
             <td class="tabmin tab_collapse">&nbsp;</td>
             <td id="tab_json" class="taboff tab_collapse">JSON</td>
             <td class="tabmin">&nbsp;</td>
             <td id="tab_code" class="taboff">
               <select id="code_menu"></select>
             </td-->
+
+
             <td class="tabmax">
 
-              <label class="input-button">Load Blocks:&nbsp;<input accept=".blockly,
-              text/plain" type="file" id="fileToLoad" name="myFiles" onchange="loadBlocklyCodeFromFile();"/></label>
-              <!--button onclick="loadBlocklyCodeFromFile()">Load Blocks</button-->
-              <button onclick="saveBlocklyCodeToFile()">Save Blocks</button>
-              <!--button id="linkButton">Save Program</button-->
-              <button id="trashButton">Delete Blocks</button>
-              <!--button id="runButton">Flash Code to Robot</button-->
-              <button onclick="saveCode()">Save Python Code</button>
+
+
+
+
+
+              <script>
+                  let video = document.getElementById('videoElement');
+                  let toggleBtn = document.getElementById('PiP');
+                 toggleBtn.addEventListener('click', togglePiPMode);
+                  async function togglePiPMode(event) {
+                      toggleBtn.disabled = true; //disable btn ,so that no multiple request are made
+                      try {
+                          if (video !== document.pictureInPictureElement) {
+                              await video.requestPictureInPicture();
+                              toggleBtn.textContent = "Exit Pip Mode";
+                          }
+                          // If already playing exit mide
+                          else {
+                              await document.exitPictureInPicture();
+                              toggleBtn.textContent = "Enable Pip Mode";
+                          }
+                      } catch (error) {
+                          console.log(error);
+                      } finally {
+                          toggleBtn.disabled = false; //enable toggle at last
+                      }
+                  }
+
+              </script>
+
 
               <!--button id="trashButton" class="notext" title="...">
                 <img src='../../media/1x1.gif' class="trash icon21">
@@ -98,7 +148,6 @@
   <pre id="content_dart" class="content prettyprint lang-dart"></pre>
   <textarea id="content_xml" class="content" wrap="off"></textarea>
   <textarea id="content_json" class="content" wrap="off"></textarea>
-
 
 
   <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
@@ -515,6 +564,10 @@
 
 <script>
 
+      function content() {
+        window.open("https://www.youtube.com/embed/?v=atzPGVUrGCA&list=PLQq4ttTu10zMh2LW4MF_QOJrYNKqQSqik", "_blank", "width=400,height=200");
+          }
+
       function saveCode() {
             var code = Blockly.Python.workspaceToCode(Code.workspace);
             savePythonCodeToFile(code, "code.py");
@@ -574,9 +627,53 @@
             reader.readAsText(selectedFile);
     }
 
+
+
+
 </script>
 
+<!--div class="resp-container">
+  <iframe
+    class="resp-iframe"
+    id="player"
+    name="myplayer"
+    type="text.html"
+
+    src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=0&controls=2"
+    frameborder="0"
+    style="border: solid 4px #d35e2c"
+    rel="0">
+  </iframe>
+</div-->
+
+<!--div style="right: 0px; border: 0px none; height: 50; resize: none; position: fixed; width: 50; overflow: none; top: 100px;">
+    <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?rel=0&amp" scrolling="no" style="height: 50%; border: 8px solid red; width: 50%; margin-bottom: 0px; margin-left: 24px;">
+    </iframe>
+  </div-->
+
+<!--div class="container">
+  <video class="responsive-iframe" controls>
+    <source src="sample-5s.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div-->
+
+<div style="height: 3vh; width: 95%; margin-bottom: 5px;"></div>
+
+
+<!--button onclick="loadBlocklyCodeFromFile()">Load Blocks</button-->
+<button onclick="saveBlocklyCodeToFile()">Save Blocks</button>
+<!--button id="linkButton">Save Program</button-->
+<button id="trashButton">Delete Blocks</button>
+<!--button id="runButton">Flash Code to Robot</button-->
+<button onclick="saveCode()">Save Python Code</button>
+
+<button onclick="content()">Open Content</button>
+
+<label class="input-button">Load Blocks:&nbsp;<input accept=".blockly,
+text/plain" type="file" id="fileToLoad" name="myFiles" onchange="loadBlocklyCodeFromFile();"/></label>
 
 
 </body>
+
 </html>
