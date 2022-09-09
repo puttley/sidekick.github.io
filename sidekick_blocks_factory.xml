@@ -104,14 +104,14 @@
                 <field name="CPU0">forward</field>
                 <field name="USER1">reverse</field>
                 <field name="CPU1">reverse</field>
-                <field name="USER2">spin right</field>
-                <field name="CPU2">spin_right</field>
-                <field name="USER3">spin left</field>
-                <field name="CPU3">spin_left</field>
-                <field name="USER4">pivot right</field>
-                <field name="CPU4">pivot_right</field>
-                <field name="USER5">pivot left</field>
-                <field name="CPU5">pivot_left</field>
+                <field name="USER2">spin clockwise</field>
+                <field name="CPU2">spin_cw</field>
+                <field name="USER3">spin counter clockwise</field>
+                <field name="CPU3">spin_ccw</field>
+                <field name="USER4">pivot left</field>
+                <field name="CPU4">pivot_left</field>
+                <field name="USER5">pivot right</field>
+                <field name="CPU5">pivot_right</field>
               </block>
             </statement>
           </block>
@@ -939,7 +939,7 @@
         <field name="ALIGN">LEFT</field>
         <statement name="FIELDS">
           <block type="field_static" id="M!pX:%#U71?#M:hh%(?Q">
-            <field name="TEXT">turn</field>
+            <field name="TEXT">set</field>
             <next>
               <block type="field_dropdown" id="2s1P)aY%rH![j^diL~s}">
                 <mutation options="[&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;]"></mutation>
@@ -1008,12 +1008,53 @@
                 <next>
                   <block type="field_static" id="/PtC-;PR;YXO7UD6[vTz">
                     <field name="TEXT">Hz</field>
+                    <next>
+                      <block type="field_static" id="QF_pZkB%;R(@G`b*d,)`">
+                        <field name="TEXT">for</field>
+                      </block>
+                    </next>
                   </block>
                 </next>
               </block>
             </next>
           </block>
         </statement>
+        <next>
+          <block type="input_value" id="pH6.7)8T.obb#AIDwm6@">
+            <field name="INPUTNAME">time</field>
+            <field name="ALIGN">LEFT</field>
+            <value name="TYPE">
+              <shadow type="type_null" id="*+P@rA`l!?:~3ri:Kh8c"></shadow>
+              <block type="type_number" id=";,_hDTc=D3EyTl(JwotI"></block>
+            </value>
+            <next>
+              <block type="input_dummy" id="(S|iwBX7@,p0Bx{9:(WZ">
+                <field name="ALIGN">LEFT</field>
+                <statement name="FIELDS">
+                  <block type="field_static" id="GIG/Txz8_2$}T+_~9`L?">
+                    <field name="TEXT">seconds, or</field>
+                  </block>
+                </statement>
+                <next>
+                  <block type="input_dummy" id="C^(=Zgprk-d}4w]!*|Z|">
+                    <field name="ALIGN">LEFT</field>
+                    <statement name="FIELDS">
+                      <block type="field_checkbox" id="jY8T6Xyo8KlC{-%{$BRi">
+                        <field name="CHECKED">FALSE</field>
+                        <field name="FIELDNAME">checked</field>
+                        <next>
+                          <block type="field_static" id="JUT~Dq^4I{sGX90rZpY^">
+                            <field name="TEXT">untl stopped</field>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
       </block>
     </statement>
     <value name="TOOLTIP">
@@ -1048,7 +1089,7 @@
         <field name="ALIGN">LEFT</field>
         <statement name="FIELDS">
           <block type="field_static" id="M!pX:%#U71?#M:hh%(?Q">
-            <field name="TEXT">stop all sounds</field>
+            <field name="TEXT">stop sound</field>
           </block>
         </statement>
       </block>
@@ -1088,26 +1129,187 @@
             <field name="TEXT">play musical note</field>
             <next>
               <block type="field_dropdown" id="pmI-WPCkUV$9M3uk_Cj=">
-                <mutation options="[&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;]"></mutation>
+                <mutation options="[&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;]"></mutation>
                 <field name="FIELDNAME">note</field>
-                <field name="USER0">A</field>
-                <field name="CPU0">A</field>
-                <field name="USER1">B</field>
-                <field name="CPU1">B</field>
-                <field name="USER2">C</field>
-                <field name="CPU2">C</field>
-                <field name="USER3">D</field>
-                <field name="CPU3">D</field>
-                <field name="USER4">E</field>
-                <field name="CPU4">E</field>
-                <field name="USER5">F</field>
-                <field name="CPU5">F</field>
-                <field name="USER6">G</field>
-                <field name="CPU6">G</field>
+                <field name="USER0">B (0)</field>
+                <field name="CPU0">B0</field>
+                <field name="USER1">C (1)</field>
+                <field name="CPU1">C1</field>
+                <field name="USER2">C# (1)</field>
+                <field name="CPU2">CS1</field>
+                <field name="USER3">D (1)</field>
+                <field name="CPU3">D1</field>
+                <field name="USER4">D# (1)</field>
+                <field name="CPU4">DS1</field>
+                <field name="USER5">E (1)</field>
+                <field name="CPU5">E1</field>
+                <field name="USER6">F (1)</field>
+                <field name="CPU6">F1</field>
+                <field name="USER7">F# (1)</field>
+                <field name="CPU7">FS1</field>
+                <field name="USER8">G (1)</field>
+                <field name="CPU8">G1</field>
+                <field name="USER9">G# (1)</field>
+                <field name="CPU9">GS1</field>
+                <field name="USER10">A (1)</field>
+                <field name="CPU10">A1</field>
+                <field name="USER11">A# (1)</field>
+                <field name="CPU11">AS1</field>
+                <field name="USER12">B (1)</field>
+                <field name="CPU12">B1</field>
+                <field name="USER13">C (2)</field>
+                <field name="CPU13">C2</field>
+                <field name="USER14">C# (2)</field>
+                <field name="CPU14">CS2</field>
+                <field name="USER15">D (2)</field>
+                <field name="CPU15">D2</field>
+                <field name="USER16">D# (2)</field>
+                <field name="CPU16">DS2</field>
+                <field name="USER17">E (2)</field>
+                <field name="CPU17">E2</field>
+                <field name="USER18">F (2)</field>
+                <field name="CPU18">F2</field>
+                <field name="USER19">F# (2)</field>
+                <field name="CPU19">FS2</field>
+                <field name="USER20">G (2)</field>
+                <field name="CPU20">G2</field>
+                <field name="USER21">G# (2)</field>
+                <field name="CPU21">GS2</field>
+                <field name="USER22">A (2)</field>
+                <field name="CPU22">A2</field>
+                <field name="USER23">A# (2)</field>
+                <field name="CPU23">AS2</field>
+                <field name="USER24">B (2)</field>
+                <field name="CPU24">B2</field>
+                <field name="USER25">C (3)</field>
+                <field name="CPU25">C3</field>
+                <field name="USER26">C# (3)</field>
+                <field name="CPU26">CS3</field>
+                <field name="USER27">D (3)</field>
+                <field name="CPU27">D3</field>
+                <field name="USER28">D# (3)</field>
+                <field name="CPU28">DS3</field>
+                <field name="USER29">E (3)</field>
+                <field name="CPU29">E3</field>
+                <field name="USER30">F (3)</field>
+                <field name="CPU30">F3</field>
+                <field name="USER31">F# (3)</field>
+                <field name="CPU31">FS3</field>
+                <field name="USER32">G (3)</field>
+                <field name="CPU32">G3</field>
+                <field name="USER33">G# (3)</field>
+                <field name="CPU33">GS3</field>
+                <field name="USER34">A (3)</field>
+                <field name="CPU34">A3</field>
+                <field name="USER35">A# (3)</field>
+                <field name="CPU35">AS3</field>
+                <field name="USER36">B (3)</field>
+                <field name="CPU36">B3</field>
+                <field name="USER37">C (4)</field>
+                <field name="CPU37">C4</field>
+                <field name="USER38">C# (4)</field>
+                <field name="CPU38">CS4</field>
+                <field name="USER39">D (4)</field>
+                <field name="CPU39">D4</field>
+                <field name="USER40">D# (4)</field>
+                <field name="CPU40">DS4</field>
+                <field name="USER41">E (4)</field>
+                <field name="CPU41">E4</field>
+                <field name="USER42">F (4)</field>
+                <field name="CPU42">F4</field>
+                <field name="USER43">F# (4)</field>
+                <field name="CPU43">FS4</field>
+                <field name="USER44">G (4)</field>
+                <field name="CPU44">G4</field>
+                <field name="USER45">G# (4)</field>
+                <field name="CPU45">GS4</field>
+                <field name="USER46">A (4)</field>
+                <field name="CPU46">A4</field>
+                <field name="USER47">option</field>
+                <field name="CPU47">OPTIONNAME</field>
+                <field name="USER48">option</field>
+                <field name="CPU48">OPTIONNAME</field>
+                <field name="USER49">option</field>
+                <field name="CPU49">OPTIONNAME</field>
+                <field name="USER50">option</field>
+                <field name="CPU50">OPTIONNAME</field>
+                <field name="USER51">option</field>
+                <field name="CPU51">OPTIONNAME</field>
+                <field name="USER52">option</field>
+                <field name="CPU52">OPTIONNAME</field>
+                <field name="USER53">option</field>
+                <field name="CPU53">OPTIONNAME</field>
+                <field name="USER54">option</field>
+                <field name="CPU54">OPTIONNAME</field>
+                <field name="USER55">option</field>
+                <field name="CPU55">OPTIONNAME</field>
+                <field name="USER56">option</field>
+                <field name="CPU56">OPTIONNAME</field>
+                <field name="USER57">option</field>
+                <field name="CPU57">OPTIONNAME</field>
+                <field name="USER58">option</field>
+                <field name="CPU58">OPTIONNAME</field>
+                <field name="USER59">option</field>
+                <field name="CPU59">OPTIONNAME</field>
+                <field name="USER60">option</field>
+                <field name="CPU60">OPTIONNAME</field>
+                <field name="USER61">option</field>
+                <field name="CPU61">OPTIONNAME</field>
+                <field name="USER62">option</field>
+                <field name="CPU62">OPTIONNAME</field>
+                <field name="USER63">option</field>
+                <field name="CPU63">OPTIONNAME</field>
+                <field name="USER64">option</field>
+                <field name="CPU64">OPTIONNAME</field>
+                <field name="USER65">option</field>
+                <field name="CPU65">OPTIONNAME</field>
+                <field name="USER66">option</field>
+                <field name="CPU66">OPTIONNAME</field>
               </block>
             </next>
           </block>
         </statement>
+        <next>
+          <block type="input_value" id="rx%X4x|_;)qH0I/8F^*?">
+            <field name="INPUTNAME">time</field>
+            <field name="ALIGN">LEFT</field>
+            <statement name="FIELDS">
+              <block type="field_static" id="7NXz2:A4MEWYwG!0HE.o">
+                <field name="TEXT">for</field>
+              </block>
+            </statement>
+            <value name="TYPE">
+              <shadow type="type_null" id="IYg1:6#TLq8JLS6,cOU/"></shadow>
+              <block type="type_number" id="sH5Z;Y^926psShNJP:b9"></block>
+            </value>
+            <next>
+              <block type="input_dummy" id="buDcH#^ox`F;2Q6Ct6Mj">
+                <field name="ALIGN">LEFT</field>
+                <statement name="FIELDS">
+                  <block type="field_static" id="%[{DR*C*67Iw,rD)%nOR">
+                    <field name="TEXT">seconds, or</field>
+                  </block>
+                </statement>
+                <next>
+                  <block type="input_dummy" id="HptJf`0jfK=_}Z1$32Y(">
+                    <field name="ALIGN">LEFT</field>
+                    <statement name="FIELDS">
+                      <block type="field_checkbox" id="o4iSq%PUqSz?E-6urQHZ">
+                        <field name="CHECKED">FALSE</field>
+                        <field name="FIELDNAME">checked</field>
+                        <next>
+                          <block type="field_static" id="t$1pSI]yM5M5ZkR(XuUX">
+                            <field name="TEXT">until stopped</field>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
       </block>
     </statement>
     <value name="TOOLTIP">

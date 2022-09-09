@@ -157,8 +157,10 @@ Blockly.Python['pixel_color'] = function(block) {
 
 Blockly.Python['pixels_off'] = function(block) {
   var dropdown_pixel = block.getFieldValue('pixel');
+  var value_color = "'#000000'"; // set to off color
+  var value_brightness = 0;      // set brighntess to zero
   // TODO: Assemble Python into code variable.
-  var code = '...\n';
+  var code = 'set_pixel(' + '"' + dropdown_pixel + '"' + ','  + value_color + ',' + value_brightness + ')\n';
   return code;
 };
 
@@ -179,20 +181,26 @@ Blockly.Python['color_picker'] = function(block) {
 
 Blockly.Python['sound_tone'] = function(block) {
   var number_tone = block.getFieldValue('tone');
+  var value_time = Blockly.Python.valueToCode(block, 'time', Blockly.Python.ORDER_ATOMIC);
+  var checkbox_checked = block.getFieldValue('checked') === 'TRUE';
   // TODO: Assemble Python into code variable.
-  var code = '...\n';
+  if(checkbox_checked){value_time = 0;} //if checked, play continuosly
+  var code = 'play_note(' + number_tone + ','  +  value_time + ')\n';
   return code;
 };
 
 Blockly.Python['sound_stop'] = function(block) {
   // TODO: Assemble Python into code variable.
-  var code = '...\n';
+  var code = 'sound_off()\n';
   return code;
 };
 
 Blockly.Python['sound_note'] = function(block) {
   var dropdown_note = block.getFieldValue('note');
+  var value_time = Blockly.Python.valueToCode(block, 'time', Blockly.Python.ORDER_ATOMIC);
+  var checkbox_checked = block.getFieldValue('checked') === 'TRUE';
   // TODO: Assemble Python into code variable.
-  var code = '...\n';
+  if(checkbox_checked){value_time = 0;} //if checked, play continuosly
+  var code = 'play_note(' + dropdown_note + ','  +  value_time + ')\n';
   return code;
 };

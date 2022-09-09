@@ -24,7 +24,7 @@ Blockly.Blocks['move_start'] = {
     this.appendDummyInput()
         .appendField("start moving");
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["forward","forward"], ["reverse","reverse"], ["spin right","spin_right"], ["spin left","spin_left"], ["pivot right","pivot_right"], ["pivot left","pivot_left"]]), "direction");
+        .appendField(new Blockly.FieldDropdown([["forward","forward"], ["reverse","reverse"], ["spin clockwise","spin_cw"], ["spin counter clockwise","spin_ccw"], ["pivot left","pivot_left"], ["pivot right","pivot_right"]]), "direction");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -251,7 +251,7 @@ Blockly.Blocks['pixel_color'] = {
 Blockly.Blocks['pixels_off'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("turn")
+        .appendField("set")
         .appendField(new Blockly.FieldDropdown([["pixel 1","pixel_1"], ["pixel 2","pixel_2"], ["pixel 3","pixel_3"], ["pixel 4","pixel_4"], ["all pixels","pixel_all"]]), "pixel")
         .appendField("off");
     this.setInputsInline(true);
@@ -289,7 +289,7 @@ Blockly.Blocks['color_picker'] = {
 Blockly.Blocks['sound_stop'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("stop all sounds");
+        .appendField("stop sound");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -303,7 +303,15 @@ Blockly.Blocks['sound_note'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("play musical note")
-        .appendField(new Blockly.FieldDropdown([["A","A"], ["B","B"], ["C","C"], ["D","D"], ["E","E"], ["F","F"], ["G","G"]]), "note");
+        .appendField(new Blockly.FieldDropdown([["B (0)","B0"], ["C (1)","C1"], ["C# (1)","CS1"], ["D (1)","D1"], ["D# (1)","DS1"], ["E (1)","E1"], ["F (1)","F1"], ["F# (1)","FS1"], ["G (1)","G1"], ["G# (1)","GS1"], ["A (1)","A1"], ["A# (1)","AS1"], ["B (1)","B1"], ["C (2)","C2"], ["C# (2)","CS2"], ["D (2)","D2"], ["D# (2)","DS2"], ["E (2)","E2"], ["F (2)","F2"], ["F# (2)","FS2"], ["G (2)","G2"], ["G# (2)","GS2"], ["A (2)","A2"], ["A# (2)","AS2"], ["B (2)","B2"], ["C (3)","C3"], ["C# (3)","CS3"], ["D (3)","D3"], ["D# (3)","DS3"], ["E (3)","E3"], ["F (3)","F3"], ["F# (3)","FS3"], ["G (3)","G3"], ["G# (3)","GS3"], ["A (3)","A3"], ["A# (3)","AS3"], ["B (3)","B3"], ["C (4)","C4"], ["C# (4)","CS4"], ["D (4)","D4"], ["D# (4)","DS4"], ["E (4)","E4"], ["F (4)","F4"], ["F# (4)","FS4"], ["G (4)","G4"], ["G# (4)","GS4"], ["A (4)","A4"], ["option","OPTIONNAME"], ["option","OPTIONNAME"], ["option","OPTIONNAME"], ["option","OPTIONNAME"], ["option","OPTIONNAME"], ["option","OPTIONNAME"], ["option","OPTIONNAME"], ["option","OPTIONNAME"], ["option","OPTIONNAME"], ["option","OPTIONNAME"], ["option","OPTIONNAME"], ["option","OPTIONNAME"], ["option","OPTIONNAME"], ["option","OPTIONNAME"], ["option","OPTIONNAME"], ["option","OPTIONNAME"], ["option","OPTIONNAME"], ["option","OPTIONNAME"], ["option","OPTIONNAME"], ["option","OPTIONNAME"]]), "note");
+    this.appendValueInput("time")
+        .setCheck("Number")
+        .appendField("for");
+    this.appendDummyInput()
+        .appendField("seconds, or");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldCheckbox("FALSE"), "checked")
+        .appendField("until stopped");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -318,7 +326,15 @@ Blockly.Blocks['sound_tone'] = {
     this.appendDummyInput()
         .appendField("play tone at")
         .appendField(new Blockly.FieldNumber(0, 0, 5000), "tone")
-        .appendField("Hz");
+        .appendField("Hz")
+        .appendField("for");
+    this.appendValueInput("time")
+        .setCheck("Number");
+    this.appendDummyInput()
+        .appendField("seconds, or");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldCheckbox("FALSE"), "checked")
+        .appendField("untl stopped");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);

@@ -155,7 +155,7 @@
       <block type="move_speed">
         <value name="speed">
           <shadow type="math_number">
-            <field name="NUM">100</field>
+            <field name="NUM">50</field>
           </shadow>
         </value>
       </block>
@@ -245,8 +245,20 @@
     </category>
 
     <category name="Sound" colour= "#1b84e4">
-      <block type="sound_tone"></block>
-      <block type="sound_note"></block>
+      <block type="sound_tone">
+        <value name="time">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="sound_note">
+        <value name="time">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+      </block>
       <block type="sound_stop"></block>
     </category>
 
@@ -672,7 +684,6 @@
 
 <label class="input-button">Load Blocks:&nbsp;<input accept=".blockly,
 text/plain" type="file" id="fileToLoad" name="myFiles" onchange="loadBlocklyCodeFromFile();"/></label>
-
 
 </body>
 
