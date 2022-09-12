@@ -5,7 +5,6 @@ html, body {
 }
 
 body {
-  background-color: #fff;
   font-family: sans-serif;
   margin: 0;
   overflow: auto;
@@ -184,7 +183,7 @@ button.notext {
 
 h1 {
   font-weight: normal;
-  font-size: 140%;
+  font-size: 120%;
   margin-left: 5px;
   margin-right: 5px;
   background-color: #fff;
@@ -221,6 +220,7 @@ h1 {
 #tabRow>td {
   border: 1px solid #ccc;
   border-bottom: none;
+  border-top: none;
 }
 td.tabon {
   border-bottom-color: #ddd !important;
@@ -235,7 +235,7 @@ td.taboff {
   background-color: #fff;
 }
 td.taboff:hover {
-  background-color: #eee;
+  background-color: #75bde6;
 }
 td.tabmin {
   border-top-style: none !important;

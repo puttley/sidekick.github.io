@@ -323,13 +323,13 @@ Blockly.Blocks['sound_note'] = {
 
 Blockly.Blocks['sound_tone'] = {
   init: function() {
-    this.appendDummyInput()
-        .appendField("play tone at")
-        .appendField(new Blockly.FieldNumber(0, 0, 5000), "tone")
-        .appendField("Hz")
-        .appendField("for");
+    this.appendValueInput("tone")
+        .setCheck("Number")
+        .appendField("play tone at");
     this.appendValueInput("time")
-        .setCheck("Number");
+        .setCheck("Number")
+        .appendField("Hz")
+        .appendField("  for");
     this.appendDummyInput()
         .appendField("seconds, or");
     this.appendDummyInput()

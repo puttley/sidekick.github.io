@@ -993,36 +993,32 @@
     <field name="INLINE">INT</field>
     <field name="CONNECTIONS">BOTH</field>
     <statement name="INPUTS">
-      <block type="input_dummy" id="IJG8hwaH!_UXAsR[Qn?~">
+      <block type="input_value" id="d_H]Z70~V]?Zlp_4gqAv">
+        <field name="INPUTNAME">tone</field>
         <field name="ALIGN">LEFT</field>
         <statement name="FIELDS">
           <block type="field_static" id="M!pX:%#U71?#M:hh%(?Q">
             <field name="TEXT">play tone at</field>
-            <next>
-              <block type="field_number" id="*)Dr/X2Qh#`39drRi?W%">
-                <field name="VALUE">0</field>
-                <field name="FIELDNAME">tone</field>
-                <field name="MIN">0</field>
-                <field name="MAX">5000</field>
-                <field name="PRECISION">0</field>
-                <next>
-                  <block type="field_static" id="/PtC-;PR;YXO7UD6[vTz">
-                    <field name="TEXT">Hz</field>
-                    <next>
-                      <block type="field_static" id="QF_pZkB%;R(@G`b*d,)`">
-                        <field name="TEXT">for</field>
-                      </block>
-                    </next>
-                  </block>
-                </next>
-              </block>
-            </next>
           </block>
         </statement>
+        <value name="TYPE">
+          <shadow type="type_null" id="4bd/xlnD.}+:=KP1|h_L"></shadow>
+          <block type="type_number" id="{lGH;dbPdmY$~iTZGVAr"></block>
+        </value>
         <next>
           <block type="input_value" id="pH6.7)8T.obb#AIDwm6@">
             <field name="INPUTNAME">time</field>
             <field name="ALIGN">LEFT</field>
+            <statement name="FIELDS">
+              <block type="field_static" id="/PtC-;PR;YXO7UD6[vTz">
+                <field name="TEXT">Hz</field>
+                <next>
+                  <block type="field_static" id="QF_pZkB%;R(@G`b*d,)`">
+                    <field name="TEXT">  for</field>
+                  </block>
+                </next>
+              </block>
+            </statement>
             <value name="TYPE">
               <shadow type="type_null" id="*+P@rA`l!?:~3ri:Kh8c"></shadow>
               <block type="type_number" id=";,_hDTc=D3EyTl(JwotI"></block>

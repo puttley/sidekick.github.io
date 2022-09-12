@@ -179,15 +179,18 @@ Blockly.Python['color_picker'] = function(block) {
   return [code, Blockly.Python.ORDER_NONE];
 };
 
+
 Blockly.Python['sound_tone'] = function(block) {
-  var number_tone = block.getFieldValue('tone');
+  var value_tone = Blockly.Python.valueToCode(block, 'tone', Blockly.Python.ORDER_ATOMIC);
   var value_time = Blockly.Python.valueToCode(block, 'time', Blockly.Python.ORDER_ATOMIC);
   var checkbox_checked = block.getFieldValue('checked') === 'TRUE';
   // TODO: Assemble Python into code variable.
   if(checkbox_checked){value_time = 0;} //if checked, play continuosly
-  var code = 'play_tone(' + number_tone + ','  +  value_time + ')\n';
+  var code = 'play_tone(' + value_tone + ','  +  value_time + ')\n';
   return code;
 };
+
+
 
 Blockly.Python['sound_stop'] = function(block) {
   // TODO: Assemble Python into code variable.

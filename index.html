@@ -46,9 +46,6 @@ function placeIt() {
 </script>
 
 
-
-<div style="height: 2vh; width: 95%; margin-bottom: 2px; background-color: #263238;"></div>
-
   <body style="text-align: left;">
 
     <!--video class=myvideo id="videoElement" controls="true" src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4">
@@ -71,7 +68,7 @@ function placeIt() {
 
 
 
-  <table width="95%" height="85%">
+  <table width="98%" height="90%">
     <tr>
       <td>
         <h1><!--a href="https://www.pitsco.com"> PITSCO Pyoneer Robot</a-->
@@ -271,6 +268,11 @@ function placeIt() {
 
     <category name="Sound" colour= "#1b84e4">
       <block type="sound_tone">
+        <value name="tone">
+          <shadow type="math_number">
+            <field name="NUM">1000</field>
+          </shadow>
+        </value>
         <value name="time">
           <shadow type="math_number">
             <field name="NUM">1</field>
@@ -747,7 +749,7 @@ function placeIt() {
   </video>
 </div-->
 
-<div style="height: 2vh; width: 95%; margin-bottom: 5px; background-color: #263238;"></div>
+<div style="height: 1vh; width: 95%; margin-bottom: 1px; background-color: #263238;"></div>
 
 
 
@@ -776,17 +778,17 @@ text/plain" type="file" id="fileToLoad" name="myFiles" onchange="loadBlocklyCode
 <!--label class="input-button">Load Blocks:&nbsp;<input accept=".blockly,
 text/plain" type="file" id="fileToLoad" name="myFiles" onchange="loadBlocklyCodeFromFile();"/></label-->
 
-<div id="layer1" style="position:absolute; top: 15px; right:25px; width:410px; height:10; visibility:hidden">
+<div id="layer1" style="position:absolute; top: 30px; right:75px; width:410px; height:10; visibility:hidden">
 
   <iframe
     id="player"
     name="myplayer"
     type="text.html"
-    width="300"
-    height="200"
+    width="400"
+    height="300"
     src="https://www.youtube.com/embed/?v=atzPGVUrGCA&list=PLQq4ttTu10zMh2LW4MF_QOJrYNKqQSqik"
     frameborder="0"
-    style="border: solid 4px #d35e2c"
+    style="border: solid 8px #e3dedb"
     rel="0"
     enablejsapi="1"
     visibility="hidden">
