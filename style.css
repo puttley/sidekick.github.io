@@ -1,5 +1,6 @@
 html, body {
   height: 100%;
+  background-color: #263238;
 
 }
 
@@ -7,15 +8,18 @@ body {
   background-color: #fff;
   font-family: sans-serif;
   margin: 0;
-  overflow: hidden;
+  overflow: auto;
+  background-color: #263238;
 }
 
 .farSide {
   text-align: right;
+  background-color: #263238;
 }
 
 html[dir="RTL"] .farSide {
   text-align: left;
+
 }
 
 html {
@@ -121,6 +125,8 @@ button.notext {
   background-color: #263238;
   color: #fff;
   font-weight: normal;
+  font-size: 16px;
+  padding: 5px 15px;
 
 }
 #trashButton{
@@ -128,6 +134,8 @@ button.notext {
   background-color: #263238;
   color: #fff;
   font-weight: normal;
+  font-size: 16px;
+  padding: 5px 15px;
 
 }
 #saveCode{
@@ -135,6 +143,8 @@ button.notext {
   background-color: #263238;
   color: #fff;
   font-weight: normal;
+  font-size: 16px;
+  padding: 5px 15px;
 
 }
 #openContent{
@@ -142,6 +152,8 @@ button.notext {
   background-color: #263238;
   color: #fff;
   font-weight: normal;
+  font-size: 16px;
+  padding: 5px 15px;
 
 }
 
@@ -150,6 +162,8 @@ button.notext {
   background-color: #263238;
   color: #fff;
   font-weight: normal;
+  font-size: 16px;
+  padding: 5px 15px;
 
 }
 
@@ -158,6 +172,8 @@ button.notext {
   background-color: #263238;
   color: #fff;
   font-weight: normal;
+  font-size: 16px;
+  padding: 5px 15px;
 
 }
 
@@ -171,6 +187,7 @@ h1 {
   font-size: 140%;
   margin-left: 5px;
   margin-right: 5px;
+  background-color: #fff;
 }
 
 /* Tabs */
@@ -210,10 +227,12 @@ td.tabon {
   background-color: #ddd;
   padding: 5px 19px;
   white-space: nowrap;
+
 }
 td.taboff {
   cursor: pointer;
   padding: 5px 19px;
+  background-color: #fff;
 }
 td.taboff:hover {
   background-color: #eee;
@@ -231,9 +250,11 @@ td.tabmax {
   padding-left: 10px;
   padding-right: 10px;
   text-align: right;
+
 }
 html[dir=rtl] td.tabmax {
   text-align: left;
+
 }
 
 
@@ -242,10 +263,13 @@ table {
   margin: 0;
   padding: 0;
   border: none;
+  background-color: #263238;
 }
 td {
   padding: 0;
   vertical-align: top;
+  background-color: #fff;
+
 }
 .content {
   visibility: hidden;
