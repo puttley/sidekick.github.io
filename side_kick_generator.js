@@ -185,7 +185,7 @@ Blockly.Python['sound_tone'] = function(block) {
   var checkbox_checked = block.getFieldValue('checked') === 'TRUE';
   // TODO: Assemble Python into code variable.
   if(checkbox_checked){value_time = 0;} //if checked, play continuosly
-  var code = 'play_note(' + number_tone + ','  +  value_time + ')\n';
+  var code = 'play_tone(' + number_tone + ','  +  value_time + ')\n';
   return code;
 };
 
