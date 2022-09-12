@@ -21,13 +21,35 @@
   <script src="./code.js"></script>
 </head>
 
+<script language="JavaScript" type="text/javascript">
+<!-- Copyright 2003, Sandeep Gangadharan -->
+<!-- For more free scripts go to http://www.sivamdesign.com/scripts/ -->
+<!--
+var y1 = 20;   // change the # on the left to adjuct the Y co-ordinate
+(document.getElementById) ? dom = true : dom = false;
+
+function hideIt() {
+// document.getElementById("player").src=""; // stops the video
+  if (dom) {document.getElementById("layer1").style.visibility='hidden';}
+}
+
+function showIt() {
+//  document.getElementById("player").src="https://www.youtube.com/embed/?v=atzPGVUrGCA&list=PLQq4ttTu10zMh2LW4MF_QOJrYNKqQSqik";
+  if (dom) {document.getElementById("layer1").style.visibility='visible';}
+}
+
+function placeIt() {
+  if (dom && !document.all) {document.getElementById("layer1").style.top = window.pageYOffset + (window.innerHeight - (window.innerHeight-y1)) + "px";}
+  if (document.all) {document.all["layer1"].style.top = document.documentElement.scrollTop + (document.documentElement.clientHeight - (document.documentElement.clientHeight-y1)) + "px";}
+  window.setTimeout("placeIt()", 10); }
+// -->
+</script>
+
+
+
 <div style="height: 2vh; width: 95%; margin-bottom: 2px; background-color: #263238;"></div>
 
   <body style="text-align: left;">
-
-
-
-
 
     <!--video class=myvideo id="videoElement" controls="true" src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4">
 
@@ -49,7 +71,7 @@
 
 
 
-  <table width="98%" height="85%">
+  <table width="95%" height="85%">
     <tr>
       <td>
         <h1><!--a href="https://www.pitsco.com"> PITSCO Pyoneer Robot</a-->
@@ -743,13 +765,42 @@
 <!--button id="runButton">Flash Code to Robot</button-->
 <button id=saveCode onclick="savePyCode()">Save Python Code</button>
 
-<button id="openContent" onclick="content()">Open Content</button>
+<!--button id="openContent" onclick="content()">Open Content</button-->
+<button id="openContent" onclick="showIt()">Open Content</button>
+
+<!--form><input type="button" value="Open pop-up" onClick="showIt()"></form-->
 
 <!--label class="input-button">Load Blocks:&nbsp;<input accept=".blockly,
 text/plain" type="file" id="fileToLoad" name="myFiles" onchange="loadBlocklyCodeFromFile();"/></label-->
 
 <!--label class="input-button">Load Blocks:&nbsp;<input accept=".blockly,
 text/plain" type="file" id="fileToLoad" name="myFiles" onchange="loadBlocklyCodeFromFile();"/></label-->
+
+<div id="layer1" style="position:absolute; top: 15px; right:25px; width:410px; height:10; visibility:hidden">
+
+  <iframe
+    id="player"
+    name="myplayer"
+    type="text.html"
+    width="300"
+    height="200"
+    src="https://www.youtube.com/embed/?v=atzPGVUrGCA&list=PLQq4ttTu10zMh2LW4MF_QOJrYNKqQSqik"
+    frameborder="0"
+    style="border: solid 4px #d35e2c"
+    rel="0"
+    enablejsapi="1"
+    visibility="hidden">
+  </iframe>
+
+<font face="verdana, arial, helvetica, sans-serif" size="2">
+<div style="float:left; background-color:gray; padding:3px; border:1px solid black">
+<span style="float:right; background-color:gray; color:white; font-weight:bold; width='20px'; text-align:center; cursor:pointer" onclick="javascript:hideIt()">&nbsp;Hide&nbsp;</span>
+
+</div>
+</font>
+</font>
+</div>
+
 
 </body>
 
