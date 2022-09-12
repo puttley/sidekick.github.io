@@ -9,6 +9,7 @@
 
   <script src="./side_kick_blocks.js" defer></script>
   <script src="./side_kick_generator.js" defer></script>
+  <script src="./blockly_helper.js" defer></script>
   <!--script src="/storage.js"></script-->
   <script src="./blockly_compressed.js"></script>
   <script src="./blocks_compressed.js"></script>
@@ -580,7 +581,7 @@
         window.open("https://www.youtube.com/embed/?v=atzPGVUrGCA&list=PLQq4ttTu10zMh2LW4MF_QOJrYNKqQSqik", "_blank", "width=400,height=200");
           }
 
-      function saveCode() {
+      function savePyCode() {
             var code = Blockly.Python.workspaceToCode(Code.workspace);
             savePythonCodeToFile(code, "code.py");
           }
@@ -616,7 +617,12 @@
             window.URL.revokeObjectURL(url);
     }
 
+/*
     function loadBlocklyCodeFromFile() {
+
+            alert();
+
+
             const selectedFile = document.getElementById('fileToLoad').files[0];
             // update the new file name
             currentFileName = selectedFile.name;
@@ -637,6 +643,53 @@
 
             });
             reader.readAsText(selectedFile);
+    }
+*/
+
+
+
+    function readFiles(){
+      var files = event.target.files;
+      // Only allow uploading one file.
+      if (files.length != 1) {
+        return;
+      }
+
+      // FileReader
+      var reader = new FileReader();
+      reader.onloadend = function(event) {
+        var target = event.target;
+        // 2 == FileReader.DONE
+        if (target.readyState == 2) {
+          try {
+            var xml = Blockly.Xml.textToDom(target.result);
+          } catch (e) {
+            alert('Error parsing XML:\n' + e);
+            return;
+          }
+          var count = Blockly.mainWorkspace.getAllBlocks().length;
+          if (count && confirm('Replace existing blocks?\n"Cancel" will merge.')) {
+            Blockly.mainWorkspace.clear();
+          }
+          Blockly.Xml.domToWorkspace(Blockly.mainWorkspace, xml);
+
+
+      //    setTimeout(ZoomCenter,1000);
+
+        }
+        // Reset value of input after loading because Chrome will not fire
+        // a 'change' event if the same file is loaded again.
+        document.getElementById('file-input').value = '';
+      };
+      reader.readAsText(files[0]);
+    }
+
+    function ZoomCenter(){
+      Blockly.mainWorkspace.zoomToFit();
+      Blockly.mainWorkspace.setScale(1);
+      Blockly.mainWorkspace.scrollCenter(workspace);	// set scroll bars to center
+
+
     }
 
 
@@ -670,20 +723,33 @@
   </video>
 </div-->
 
-<div style="height: 3vh; width: 95%; margin-bottom: 5px;"></div>
+<div style="height: 3vh; width: 95%; margin-bottom: 5px; background-color: #03A9F4;"></div>
+<div style="height: 2vh; width: 95%; margin-bottom: 2px;"></div>
 
 
 <!--button onclick="loadBlocklyCodeFromFile()">Load Blocks</button-->
-<button onclick="saveBlocklyCodeToFile()">Save Blocks</button>
+<!--input accept=".blockly,text/plain" id="fileToLoad" type="file" name="myFiles" onchange="loadBlocklyCodeFromFile();"/-->
+
+
+<button id = openBlocks class ="openButton" onclick="document.getElementById('file-input').click();">Open Blocks</button>
+<input accept=".blockly" id="file-input" type="file" name="name" onchange="readFiles(this.files)" style="display: none;" />
+
+<button id="saveBlocks" onclick="saveBlocklyCodeToFile()">Save Blocks</button>
 <!--button id="linkButton">Save Program</button-->
 <button id="trashButton">Delete Blocks</button>
+<!--button id="delete" onclick="discardBlocks()">Delete Stuff</button-->
 <!--button id="runButton">Flash Code to Robot</button-->
-<button onclick="saveCode()">Save Python Code</button>
+<button id=saveCode onclick="savePyCode()">Save Python Code</button>
 
-<button onclick="content()">Open Content</button>
+<button id="openContent" onclick="content()">Open Content</button>
 
-<label class="input-button">Load Blocks:&nbsp;<input accept=".blockly,
-text/plain" type="file" id="fileToLoad" name="myFiles" onchange="loadBlocklyCodeFromFile();"/></label>
+<!--label class="input-button">Load Blocks:&nbsp;<input accept=".blockly,
+text/plain" type="file" id="fileToLoad" name="myFiles" onchange="loadBlocklyCodeFromFile();"/></label-->
+
+<!--label class="input-button">Load Blocks:&nbsp;<input accept=".blockly,
+text/plain" type="file" id="fileToLoad" name="myFiles" onchange="loadBlocklyCodeFromFile();"/></label-->
+
+
 
 </body>
 

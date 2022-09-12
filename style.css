@@ -116,6 +116,56 @@ button.notext {
   font-size: 10%;
 }
 
+#saveBlocks{
+  margin: 3px 3px 3px 3px;
+  background-color: #263238;
+  color: #fff;
+  font-weight: normal;
+
+}
+#trashButton{
+  margin: 3px 3px 3px 3px;
+  background-color: #263238;
+  color: #fff;
+  font-weight: normal;
+
+}
+#saveCode{
+  margin: 3px 3px 3px 3px;
+  background-color: #263238;
+  color: #fff;
+  font-weight: normal;
+
+}
+#openContent{
+  margin: 3px 3px 3px 3px;
+  background-color: #263238;
+  color: #fff;
+  font-weight: normal;
+
+}
+
+#loadBlocks{
+  margin: 3px 3px 3px 3px;
+  background-color: #263238;
+  color: #fff;
+  font-weight: normal;
+
+}
+
+#openBlocks{
+  margin: 3px 3px 3px 3px;
+  background-color: #263238;
+  color: #fff;
+  font-weight: normal;
+
+}
+
+
+
+
+
+
 h1 {
   font-weight: normal;
   font-size: 140%;
