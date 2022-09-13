@@ -21,6 +21,8 @@
   <script src="./code.js"></script>
 </head>
 
+<div style="height: 1vh; width: 100%; background-color: #263238;"></div>
+
 <script language="JavaScript" type="text/javascript">
 <!-- Copyright 2003, Sandeep Gangadharan -->
 <!-- For more free scripts go to http://www.sivamdesign.com/scripts/ -->
@@ -778,7 +780,7 @@ text/plain" type="file" id="fileToLoad" name="myFiles" onchange="loadBlocklyCode
 <!--label class="input-button">Load Blocks:&nbsp;<input accept=".blockly,
 text/plain" type="file" id="fileToLoad" name="myFiles" onchange="loadBlocklyCodeFromFile();"/></label-->
 
-<div id="layer1" style="position:absolute; top: 30px; right:75px; width:410px; height:10; visibility:hidden">
+<!--div id="layer1" style="position:absolute; top: 30px; right:75px; width:410px; height:10; visibility:hidden">
 
   <iframe
     id="player"
@@ -801,7 +803,74 @@ text/plain" type="file" id="fileToLoad" name="myFiles" onchange="loadBlocklyCode
 </div>
 </font>
 </font>
+</div-->
+
+<div id="layer1">
+  <div style="float:left; background-color:gray; padding:2px; border:1px solid black">
+  <span style="float:right; background-color:#263238; color:white; font-weight:normal; width='20px'; text-align:center; cursor:pointer" onclick="javascript:hideIt()">&nbsp;Hide&nbsp;</span>
+  </div>
+  <div id="mydivheader">Click here to move</div>
+  <iframe
+    id="player"
+    name="myplayer"
+    type="text.html"
+    width="420"
+    height="300"
+    src="https://www.youtube.com/embed/?v=atzPGVUrGCA&list=PLQq4ttTu10zMh2LW4MF_QOJrYNKqQSqik"
+    frameborder="0"
+    style="border: solid 8px #e3dedb"
+    rel="0"
+    enablejsapi="1"
+    visibility="hidden">
+  </iframe>
+
 </div>
+
+<script>
+//Make the DIV element draggagle:
+dragElement(document.getElementById("layer1"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+</script>
 
 
 </body>
