@@ -135,6 +135,32 @@ Blockly.Python['delay'] = function(block) {
   return code;
 };
 
+Blockly.Python['pixel_animate'] = function(block) {
+  var dropdown_animation = block.getFieldValue('animation');
+  var number_seconds = block.getFieldValue('seconds');
+  // TODO: Assemble Python into code variable.
+  var code = 'show_pixel_animation(' + dropdown_animation + ','  + number_seconds + ')\n';
+  return code;
+};
+
+Blockly.Python['pixel_blink'] = function(block) {
+  var dropdown_pixel = block.getFieldValue('pixel');
+  var value_color = Blockly.Python.valueToCode(block, 'color', Blockly.Python.ORDER_ATOMIC);
+  var value_times = Blockly.Python.valueToCode(block, 'times', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var color1 = value_color;
+  var re = /[0-9A-Fa-f]{6}/g;
+  var inputString = color1;
+  if(re.test(inputString)) {  // check to see if it's hex format color
+      var code = 'blink_pixel(' + '"' + dropdown_pixel + '"' + ','  +  value_color + ',' + value_times + ')\n';
+  } else {                    // non hex format (random color picker)
+      var code = 'blink_pixel(' + '"' + dropdown_pixel + '"' + ','  + value_color + ',' + value_times + ')\n';
+  }
+  re.lastIndex = 0; // be sure to reset the index after using .text()
+  return code;
+};
+
+
 
 Blockly.Python['pixel_color'] = function(block) {
   var dropdown_pixel = block.getFieldValue('pixel');

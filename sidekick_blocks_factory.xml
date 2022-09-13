@@ -1405,4 +1405,191 @@
         <field name="HUE">230</field>
       </block>
     </value>
+  </block><block type="factory_base" id="Na1Y=El3sK,s~uvNKUfC" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">pixel animate</field>
+    <field name="INLINE">INT</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="IJG8hwaH!_UXAsR[Qn?~">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="M!pX:%#U71?#M:hh%(?Q">
+            <field name="TEXT">show</field>
+            <next>
+              <block type="field_dropdown" id="2s1P)aY%rH![j^diL~s}">
+                <mutation options="[&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;]"></mutation>
+                <field name="FIELDNAME">animation</field>
+                <field name="USER0">rainbow</field>
+                <field name="CPU0">rainbow</field>
+                <field name="USER1">comet</field>
+                <field name="CPU1">comet</field>
+                <field name="USER2">chase</field>
+                <field name="CPU2">chase</field>
+                <field name="USER3">fade</field>
+                <field name="CPU3">fade</field>
+                <field name="USER4">sparkle</field>
+                <field name="CPU4">sparkle</field>
+                <field name="USER5">color cycle</field>
+                <field name="CPU5">colorcyle</field>
+                <field name="USER6">sparkle fade</field>
+                <field name="CPU6">sparkle_fade</field>
+                <field name="USER7">rainbow comet</field>
+                <field name="CPU7">rainbow_comet</field>
+                <field name="USER8">rainbow chase</field>
+                <field name="CPU8">rainbow_chase</field>
+                <field name="USER9">rainbow sparkle</field>
+                <field name="CPU9">rainbow_sparkle</field>
+                <next>
+                  <block type="field_static" id="9|^pvPX^up@`X),;G9L)">
+                    <field name="TEXT">animation for</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="input_dummy" id="dLP`_g0;r~dAX3wH67Ik">
+            <field name="ALIGN">LEFT</field>
+            <statement name="FIELDS">
+              <block type="field_number" id="|R2tJgIn^7b5uJ=]=/nl">
+                <field name="VALUE">2</field>
+                <field name="FIELDNAME">seconds</field>
+                <field name="MIN">0</field>
+                <field name="MAX">Infinity</field>
+                <field name="PRECISION">0</field>
+                <next>
+                  <block type="field_static" id="0NL4/HQ5jI].(l+b^Ff^">
+                    <field name="TEXT">seconds</field>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="!SGksY^viqcljRcrdE5V" deletable="false" movable="false">
+        <field name="TEXT">Show an animation pattern for number of seconds</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="DC[r=HX:q*G38S:1_In~" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id=";vdhVZ*`W)yOLd8C0EeX"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="hBR:1j~_KBAMtcW@GXUK"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="$%wzJSI`^!aRDkw^7gn{">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="Na1Y=El3sK,s~uvNKUfC" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">pixel blink</field>
+    <field name="INLINE">INT</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="IJG8hwaH!_UXAsR[Qn?~">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="M!pX:%#U71?#M:hh%(?Q">
+            <field name="TEXT">blink</field>
+            <next>
+              <block type="field_dropdown" id="2s1P)aY%rH![j^diL~s}">
+                <mutation options="[&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;]"></mutation>
+                <field name="FIELDNAME">pixel</field>
+                <field name="USER0">pixel 1</field>
+                <field name="CPU0">pixel_1</field>
+                <field name="USER1">pixel 2</field>
+                <field name="CPU1">pixel_2</field>
+                <field name="USER2">pixel 3</field>
+                <field name="CPU2">pixel_3</field>
+                <field name="USER3">pixel 4</field>
+                <field name="CPU3">pixel_4</field>
+                <field name="USER4">all pixels</field>
+                <field name="CPU4">pixel_all</field>
+                <next>
+                  <block type="field_static" id="9|^pvPX^up@`X),;G9L)">
+                    <field name="TEXT">with</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="input_value" id="8+/OJ8O?d58uDLwX*^KQ">
+            <field name="INPUTNAME">color</field>
+            <field name="ALIGN">LEFT</field>
+            <value name="TYPE">
+              <shadow type="type_null" id="OG!pRRnDqE:n2]Y#x*j!"></shadow>
+              <block type="type_other" id="!1D9}n6bkJ:t.k7Yctyb">
+                <field name="TYPE">Colour</field>
+              </block>
+            </value>
+            <next>
+              <block type="input_dummy" id="dT7F%-]HJS/iY)jA$(Cx">
+                <field name="ALIGN">LEFT</field>
+                <statement name="FIELDS">
+                  <block type="field_static" id=",_Wp%z@Nd%!Z~v*hfuj]">
+                    <field name="TEXT">color</field>
+                  </block>
+                </statement>
+                <next>
+                  <block type="input_value" id="y^==nyGAXg4}Vf625Q-S">
+                    <field name="INPUTNAME">times</field>
+                    <field name="ALIGN">LEFT</field>
+                    <value name="TYPE">
+                      <shadow type="type_null" id="SR8=`1,2R3I$HBrjmZ+f"></shadow>
+                      <block type="type_number" id="8-{FQj}aOq-;U(g_8mD5"></block>
+                    </value>
+                    <next>
+                      <block type="input_dummy" id="VCt=^Z-75^w=6YA|2!0z">
+                        <field name="ALIGN">LEFT</field>
+                        <statement name="FIELDS">
+                          <block type="field_static" id="*oe}D|501Ta#,`H@v/~!">
+                            <field name="TEXT">times</field>
+                          </block>
+                        </statement>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="!SGksY^viqcljRcrdE5V" deletable="false" movable="false">
+        <field name="TEXT">Blink the pixels(s) with a color 'x' number of times</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="DC[r=HX:q*G38S:1_In~" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id=";vdhVZ*`W)yOLd8C0EeX"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="hBR:1j~_KBAMtcW@GXUK"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="$%wzJSI`^!aRDkw^7gn{">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
   </block></xml>

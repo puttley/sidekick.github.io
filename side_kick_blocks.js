@@ -225,6 +225,48 @@ Blockly.Blocks['delay'] = {
   }
 };
 
+Blockly.Blocks['pixel_animate'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("show")
+        .appendField(new Blockly.FieldDropdown([["rainbow","rainbow"], ["comet","comet"], ["chase","chase"], ["fade","fade"], ["sparkle","sparkle"], ["color cycle","colorcycle"], ["sparkle fade","sparkle_fade"], ["rainbow comet","rainbow_comet"], ["rainbow chase","rainbow_chase"], ["rainbow sparkle","rainbow_sparkle"]]), "animation")
+        .appendField("animation for");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldNumber(2, 0), "seconds")
+        .appendField("seconds");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#891813");
+ this.setTooltip("Show an animation pattern for number of seconds");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['pixel_blink'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("blink")
+        .appendField(new Blockly.FieldDropdown([["pixel 1","pixel_1"], ["pixel 2","pixel_2"], ["pixel 3","pixel_3"], ["pixel 4","pixel_4"], ["all pixels","pixel_all"]]), "pixel")
+        .appendField("with");
+    this.appendValueInput("color")
+        .setCheck("Colour");
+    this.appendDummyInput()
+        .appendField("color");
+    this.appendValueInput("times")
+        .setCheck("Number");
+    this.appendDummyInput()
+        .appendField("times");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#891813");
+ this.setTooltip("Blink the pixels(s) with a color 'x' number of times");
+ this.setHelpUrl("");
+  }
+};
+
+
 Blockly.Blocks['pixel_color'] = {
   init: function() {
     this.appendDummyInput()
