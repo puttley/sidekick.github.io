@@ -385,3 +385,17 @@ Blockly.Blocks['sound_tone'] = {
  this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['sound_effect'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("play sound effect")
+        .appendField(new Blockly.FieldDropdown([["siren","siren"], ["whistle down","whistle_down"], ["whistle up","whistle_up"], ["correct","correct"], ["incorrect","incorrect"], ["phaser","phaser"], ["happy birthday","happy_birthday"], ["close encounters","close_encounters"], ["super mario","super_mario"], ["up and down","up_and_down"], ["random sounds","random_sounds"], ["red alert","red_alert"], ["whoops","whoops"], ["buzz buzz buzz","buzz_buzz_buzz"]]), "effect");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#1b84e4");
+ this.setTooltip("Play a sound effect");
+ this.setHelpUrl("");
+  }
+};

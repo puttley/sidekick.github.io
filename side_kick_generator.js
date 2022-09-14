@@ -233,3 +233,10 @@ Blockly.Python['sound_note'] = function(block) {
   var code = 'play_note(' + dropdown_note + ','  +  value_time + ')\n';
   return code;
 };
+
+Blockly.Python['sound_effect'] = function(block) {
+  var dropdown_effect = block.getFieldValue('effect');
+  // TODO: Assemble Python into code variable.
+  var code = 'play_sound_effect(' + "'" + dropdown_effect + "'" + ')\n';
+  return code;
+};

@@ -1592,4 +1592,75 @@
         <field name="HUE">230</field>
       </block>
     </value>
+  </block><block type="factory_base" id="Na1Y=El3sK,s~uvNKUfC" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">sound effect</field>
+    <field name="INLINE">INT</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="IJG8hwaH!_UXAsR[Qn?~">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="M!pX:%#U71?#M:hh%(?Q">
+            <field name="TEXT">play sound effect</field>
+            <next>
+              <block type="field_dropdown" id="pmI-WPCkUV$9M3uk_Cj=">
+                <mutation options="[&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;]"></mutation>
+                <field name="FIELDNAME">effect</field>
+                <field name="USER0">siren</field>
+                <field name="CPU0">siren</field>
+                <field name="USER1">whistle down</field>
+                <field name="CPU1">whistle_down</field>
+                <field name="USER2">whistle up</field>
+                <field name="CPU2">whistle_up</field>
+                <field name="USER3">correct</field>
+                <field name="CPU3">correct</field>
+                <field name="USER4">incorrect</field>
+                <field name="CPU4">incorrect</field>
+                <field name="USER5">phaser</field>
+                <field name="CPU5">phaser</field>
+                <field name="USER6">happy birthday</field>
+                <field name="CPU6">happy_birthday</field>
+                <field name="USER7">close encounters</field>
+                <field name="CPU7">close_encounters</field>
+                <field name="USER8">super mario</field>
+                <field name="CPU8">super_mario</field>
+                <field name="USER9">up and down</field>
+                <field name="CPU9">up_and_down</field>
+                <field name="USER10">random sounds</field>
+                <field name="CPU10">random_sounds</field>
+                <field name="USER11">red alert</field>
+                <field name="CPU11">red_alert</field>
+                <field name="USER12">whoops</field>
+                <field name="CPU12">whoops</field>
+                <field name="USER13">buzz buzz buzz</field>
+                <field name="CPU13">buzz_buzz_buzz</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="!SGksY^viqcljRcrdE5V" deletable="false" movable="false">
+        <field name="TEXT">Play a sound effect</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="DC[r=HX:q*G38S:1_In~" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id=";vdhVZ*`W)yOLd8C0EeX"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="hBR:1j~_KBAMtcW@GXUK"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="$%wzJSI`^!aRDkw^7gn{">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
   </block></xml>
