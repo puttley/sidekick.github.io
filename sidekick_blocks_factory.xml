@@ -572,7 +572,7 @@
         <field name="ALIGN">LEFT</field>
         <statement name="FIELDS">
           <block type="field_static" id="z1HNt%tA?/*,}+P#Cfv*">
-            <field name="TEXT">ultrasonic sensor </field>
+            <field name="TEXT">ultrasonic distance sensor </field>
           </block>
         </statement>
       </block>
@@ -607,14 +607,14 @@
         <field name="ALIGN">LEFT</field>
         <statement name="FIELDS">
           <block type="field_static" id="z1HNt%tA?/*,}+P#Cfv*">
-            <field name="TEXT">line finder sensor</field>
+            <field name="TEXT">reflected light sensor</field>
           </block>
         </statement>
       </block>
     </statement>
     <value name="TOOLTIP">
       <block type="text" id="jh|hT9vJeaNUvK+D1s[F" deletable="false" movable="false">
-        <field name="TEXT">Read the value returned by the line finder sensor. </field>
+        <field name="TEXT">Read the value returned by the reflected lighter sensor. </field>
       </block>
     </value>
     <value name="HELPURL">

@@ -123,7 +123,7 @@ Blockly.Python['sensor_ultrasonic'] = function(block) {
 
 Blockly.Python['sensor_line'] = function(block) {
   // TODO: Assemble Python into code variable.
-  var code = 'line_finder()';
+  var code = 'reflected_light_sensor()';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_NONE];
 };

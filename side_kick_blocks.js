@@ -189,7 +189,7 @@ Blockly.Blocks['event_gray_button'] = {
 Blockly.Blocks['sensor_ultrasonic'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("ultrasonic sensor ");
+        .appendField("ultrasonic distance sensor ");
     this.setOutput(true, "Number");
     this.setColour("#ec5b13");
  this.setTooltip("Read the distance to an object in centimeters returned by the ultrasonic sensor.");
@@ -200,10 +200,10 @@ Blockly.Blocks['sensor_ultrasonic'] = {
 Blockly.Blocks['sensor_line'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("line finder sensor");
+        .appendField("reflected light sensor");
     this.setOutput(true, "Boolean");
     this.setColour("#ec5b13");
- this.setTooltip("Read the value returned by the line finder sensor. ");
+ this.setTooltip("Read the value returned by the reflected lighter sensor.");
  this.setHelpUrl("");
   }
 };
