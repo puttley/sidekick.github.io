@@ -826,13 +826,12 @@ text/plain" type="file" id="fileToLoad" name="myFiles" onchange="loadBlocklyCode
   <div style="float:left; background-color:gray; padding:2px; border:1px solid black">
   <span style="float:right; background-color:#263238; color:white; font-weight:normal; width='20px'; text-align:center; cursor:pointer" onclick="javascript:hideIt()">&nbsp;Hide&nbsp;</span>
   </div>
-  <div id="mydivheader">Click here to move</div>
+  <div id="player_header">Click here to move</div>
   <iframe
     id="player"
     name="myplayer"
     type="text.html"
-    width="420"
-    height="300"
+
     src="https://www.youtube.com/embed/?v=atzPGVUrGCA&list=PLQq4ttTu10zMh2LW4MF_QOJrYNKqQSqik"
     frameborder="0"
     style="border: solid 8px #e3dedb"
@@ -849,12 +848,12 @@ dragElement(document.getElementById("layer1"));
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-  if (document.getElementById(elmnt.id + "header")) {
+  if (document.getElementById("player_header")) {
     /* if present, the header is where you move the DIV from:*/
-    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+    document.getElementById("player_header").onmousedown = dragMouseDown;
   } else {
     /* otherwise, move the DIV from anywhere inside the DIV:*/
-    elmnt.onmousedown = dragMouseDown;
+    /*elmnt.onmousedown = dragMouseDown;*/
   }
 
   function dragMouseDown(e) {
