@@ -344,7 +344,9 @@ button {
 }
 
 #layer1 {
-  padding: 4px;
+  height:320px;
+  width:520px;
+  padding-bottom: 20px;
   position: absolute;
   top: 30px;
   left: 600px;
@@ -360,17 +362,20 @@ button {
 }
 
 #playerheader {
-  padding: 10px;
+  padding: 4px;
+  height:auto;
+  text-align:center;
+  font-weight:normal;
   cursor: move;
   z-index: 10;
   background-color: #2196F3;
   color: #fff;
+
 }
 
 #player{
-
   width:90%;
-  height:80%;
+  height:90%;
 
 
 
