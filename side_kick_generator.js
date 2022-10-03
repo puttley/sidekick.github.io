@@ -94,14 +94,16 @@ Blockly.Python['move_servo'] = function(block) {
 
 Blockly.Python['event_wait_for_start'] = function(block) {
   // TODO: Assemble Python into code variable.
-  var code = 'from SideKick import *\n' + 'wait_for_start()\n';
+  //var code = 'from SideKick import *\n' + 'wait_for_start()\n';
+  Blockly.Python.definitions_['import sidekick'] = 'from SideKick import *'; // forces statement to top of code generator
+  var code = 'wait_for_start()\n';
   return code;
 };
 
 Blockly.Python['event_green_button'] = function(block) {
   var dropdown_state = block.getFieldValue('state');
   // TODO: Assemble Python into code variable.
-  var code = 'green_button(' + dropdown_state + ')\n';
+  var code = 'green_button(' + dropdown_state + ')';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_NONE];
 };
@@ -109,7 +111,7 @@ Blockly.Python['event_green_button'] = function(block) {
 Blockly.Python['event_gray_button'] = function(block) {
   var dropdown_state = block.getFieldValue('state');
   // TODO: Assemble Python into code variable.
-  var code = 'black_button(' + dropdown_state + ')\n';
+  var code = 'black_button(' + dropdown_state + ')';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_NONE];
 };

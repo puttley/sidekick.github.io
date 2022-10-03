@@ -24,7 +24,7 @@ Blockly.Blocks['move_start'] = {
     this.appendDummyInput()
         .appendField("start moving");
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["forward","forward"], ["reverse","reverse"], ["spin clockwise","spin_cw"], ["spin counter clockwise","spin_ccw"], ["pivot left","pivot_left"], ["pivot right","pivot_right"]]), "direction");
+        .appendField(new Blockly.FieldDropdown([["forward","forward"], ["reverse","reverse"], ["spin clockwise","spin_cw"], ["spin counterclockwise","spin_ccw"], ["pivot left","pivot_left"], ["pivot right","pivot_right"]]), "direction");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -69,7 +69,7 @@ Blockly.Blocks['move_spin'] = {
     this.appendDummyInput()
         .appendField("spin");
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["clockwise","clockwise"], ["counter clockwise","counterclockwise"]]), "direction");
+        .appendField(new Blockly.FieldDropdown([["clockwise","clockwise"], ["counterclockwise","counterclockwise"]]), "direction");
     this.appendValueInput("degrees")
         .setCheck("Number");
     this.appendDummyInput()
