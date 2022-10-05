@@ -103,7 +103,7 @@ Blockly.Python['event_wait_for_start'] = function(block) {
 Blockly.Python['event_green_button'] = function(block) {
   var dropdown_state = block.getFieldValue('state');
   // TODO: Assemble Python into code variable.
-  var code = 'green_button(' + dropdown_state + ')';
+  var code = 'green_button(' + '"' + dropdown_state + '"' + ')';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_NONE];
 };
@@ -111,7 +111,7 @@ Blockly.Python['event_green_button'] = function(block) {
 Blockly.Python['event_gray_button'] = function(block) {
   var dropdown_state = block.getFieldValue('state');
   // TODO: Assemble Python into code variable.
-  var code = 'black_button(' + dropdown_state + ')';
+  var code = 'black_button(' + '"' + dropdown_state + '"' + ')';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_NONE];
 };
