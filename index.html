@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google" value="notranslate">
-  <title>PITSCO SideKick Robot:</title>
+  <title>PITSCO Education SideKick Robot:</title>
   <link rel="stylesheet" href="style.css">
 
   <script src="./side_kick_blocks.js" defer></script>
@@ -632,18 +632,41 @@ function placeIt() {
           }
 
       function savePythonCodeToFile(data, fileName) {
+
             var a = document.createElement("a");
             document.body.appendChild(a);
             a.style = "display: none";
 
+
             var json = JSON.stringify(data),
                 blob = new Blob([data], {type: "text/plain;charset=utf-8"}),
                 url = window.URL.createObjectURL(blob);
+
+
             a.href = url;
             a.download = fileName;
             a.click();
+            alert("wait for download to finish")
+
             window.URL.revokeObjectURL(url);
+
+
     }
+
+    function savePythonCodeToFile_2(data, fileName) {
+
+          //var content = ["your-content-here"];
+          var json = JSON.stringify(data),
+               bl = new Blob([data], {type: "text/plain;charset=utf-8"});
+          var a = document.createElement("a");
+          a.href = URL.createObjectURL(bl);
+          a.download = "code.py";
+          a.hidden = true;
+          document.body.appendChild(a);
+          a.click();
+
+  }
+
 
     function saveBlocklyCodeToFile() {
             var a = document.createElement("a");
